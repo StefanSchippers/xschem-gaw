@@ -1,0 +1,95 @@
+Gaw object hierarchy
+
+
+userData
+top level window
+  globalTable
+    toolBar
+    ui manager
+    hbox for X measure buttons
+       measure_button + label
+       measure_button + label
+       measure_button + label
+    scrolled_window  for panel table
+      table container for panels
+        lmbox container for the left part = (lmhbox | lmvbox)
+	lmhbox
+	  lmscroll_win
+	     lmtable
+	       lmtopbox
+	       
+	       vw_button c0_button c1_button diff_button
+	       ... repeated for each visble wave
+	       
+	  ylabel_box
+	     label_layout
+	        ylabels
+		
+	lmvbox
+	  logy_hbox
+	     ylabel_log
+	     ylabel_max
+	  lmscroll_win
+	     lmtable
+	       lmtopbox
+	       
+	       vw_button c0_button c1_button diff_button
+	       ... repeated for each visble wave
+	       
+	  ylabel_box
+	     ylabel_min
+	  
+
+        panel  DrawingArea
+	
+	... repeated for each panel
+	
+   event_box
+     allline_hbox
+     	logx_ box
+	  logx_label
+	  grip_drawing_area
+        xlabel_box
+	  layout
+	    xlabels
+   statusbar
+   xscrollbar
+
+
+   DataFile
+    WaveTable
+    wlist_win list window
+      vbox
+        wlist_menubar
+	label file name
+	scrolled_window
+	  vbox
+	    button wave list button
+	    ...
+
+
+
+
+WaveTable : wt
+   DataSet
+     GPtrArray *datas
+       GArray col0
+       ...
+       GArray coln
+     GPtrArray *vars
+       WaveVar iv
+       WaveVar dv(0)
+       ...
+       WaveVar dv(n-1)
+
+
+Growing Politic :
+  - the main window size is computed from its components :
+     * panels are given the minimal size request 
+     * panelTable is given a size request height of n panels user defined
+       panelHeight.
+     * main scrolled window is given a size request height of n panels user
+       defined  panelHeight as long as it stand on the screen.
+     * when adding or removing a panel
+     * when showing the xlabel box
+     * when showing the xmeas_button box  

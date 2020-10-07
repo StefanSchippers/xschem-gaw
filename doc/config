@@ -1,0 +1,23 @@
+
+Gaw configuration files
+======================
+
+Gaw uses 2 configuration files.
+
+The first one is specific to Gtk objects and is mandatory. A copy of it can
+be found in the directory GAWRCDIR (/usr/local/share/gaw) after installation.
+The contents of this file can be overriden by an instance of the file 
+$HOME/.gaw/gaw-gtkrc where users are invited to put their preferences.
+Info on the content an syntax of this file can be found
+in GTK+ Reference Manual : Resource Files.
+
+This file define colors for cursors, wave buttons, waves, DrawingAreas in
+wavePanel, statusBar. Keep in mind that changing a color may imply others
+changes. For example changing the DrawingArea background to white, will imply
+changing the hightlight and srange color and may be the cursor color to make
+then visible.
+
+The second deals with application itself and is automaticaly created in the
+file $HOME/.gaw/gawrc at first startup. Some variables can be changed from
+inside the application, but others require that you use your favorite
+text editor.

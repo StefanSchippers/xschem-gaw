@@ -1,0 +1,122 @@
+# pixmap_path "<dir 1>:<dir 2>:<dir 3>:..."
+#
+# widget <widget_set> style <style_name>
+# widget_class <widget_class_set> style <style_name>
+#
+
+style "defaultfont"
+{
+  font_name = "Sans 8"
+}
+
+style "Cursor0" {
+	color["cursor0"] = { 1.0, 1.0, 1.0 } # white	
+	fg[NORMAL]   = @cursor0
+	fg[PRELIGHT] = { 0.0, 1.0, 1.0 }
+}
+style "Cursor1" {
+	color["cursor1"] = { 1.0, 1.0, 0.0 } # yellow
+	fg[NORMAL]   = @cursor1
+	fg[PRELIGHT] = { 0.5, 1.0, 0.0 }
+}
+style "CursorD" {
+	fg[NORMAL]   = { 0.0, 1.0, 0.0 }  # green
+	fg[PRELIGHT] = { 0.5, 1.0, 0.0 }
+}
+
+widget "*cursor0"    style "Cursor0"
+widget "*cursor1"    style "Cursor1"
+widget "*cursorD"    style "CursorD"
+
+# This sets the waveform button background.
+style "wavebutton" {
+	bg[NORMAL]   = { 0.25, 0.25, 0.25 }
+	bg[PRELIGHT] = { 0.30, 0.30, 0.30 }
+	bg[ACTIVE]   = { 0.40, 0.40, 0.40 }
+}
+
+widget "*wavebutton" style "wavebutton"
+# widget "*listButton" style "wavebutton"
+
+#
+# Waveforms and waveform-button labels will use this set of 6 colors.  
+# If there are not 6 of them here, the waveform-label buttons will get
+# the default black, and the waveform itself will get drawn in black also,
+# which won't be visible at all if the background is also black.
+#
+
+style "wavecolor0" {		# blue
+	color["wavecolor0"] = {0.4, 0.5, 1.0 }	
+	fg[NORMAL]     = @wavecolor0
+	fg[ACTIVE]     = @wavecolor0
+	fg[PRELIGHT]   = @wavecolor0
+}
+
+style "wavecolor1" {            # red
+	color["wavecolor1"] = {1.0, 0.0, 0.0}
+	fg[NORMAL]     = @wavecolor1
+	fg[ACTIVE]     = @wavecolor1
+	fg[PRELIGHT]   = @wavecolor1
+}
+
+style "wavecolor2" {    	# green
+	color["wavecolor2"] = {0.0, 1.0, 0.0}
+	fg[NORMAL]     = @wavecolor2
+	fg[ACTIVE]     = @wavecolor2
+	fg[PRELIGHT]   = @wavecolor2
+}
+
+style "wavecolor3" {    	# yellow
+	color["wavecolor3"] = {1.0, 1.0, 0.0}
+	fg[NORMAL]     = @wavecolor3
+	fg[ACTIVE]     = @wavecolor3
+	fg[PRELIGHT]   = @wavecolor3
+}
+
+style "wavecolor4" {		# cyan
+	color["wavecolor4"] = {0.0, 1.0, 1.0}
+	fg[NORMAL]     = @wavecolor4
+	fg[ACTIVE]     = @wavecolor4
+	fg[PRELIGHT]   = @wavecolor4
+}
+
+style "wavecolor5" {    	# purple
+	color["wavecolor5"] =  {1.0, 0.0, 1.0}
+	fg[NORMAL]     = @wavecolor5
+	fg[ACTIVE]     = @wavecolor5
+	fg[PRELIGHT]   = @wavecolor5
+}
+
+style "wavePanel" {    	# black
+	color["graticule"] = { 0.40, 0.16, 0.16 } # dark red
+	color["highlight"] = { 1.0, 1.0, 1.0 } # white
+	color["srange"]    = { 1.0, 1.0, 1.0 } # white
+	color["dacursor0"] = { 1.0, 1.0, 1.0 } # white	
+	color["dacursor1"] = { 1.0, 1.0, 0.0 } # yellow	
+
+	bg[NORMAL] = {0.0, 0.0, 0.0}	
+}
+
+# common default
+class "GtkWidget" style "defaultfont"
+
+widget "*wavecolor0" style "wavecolor0"
+widget "*wavecolor1" style "wavecolor1"
+widget "*wavecolor2" style "wavecolor2"
+widget "*wavecolor3" style "wavecolor3"
+widget "*wavecolor4" style "wavecolor4"
+widget "*wavecolor5" style "wavecolor5"
+widget "*wavebutton" style "wavebutton"
+
+widget "*wavepanel" style "wavePanel"
+
+style "StatusBar" {
+	fg[NORMAL]   = { 1.0, 0.0, 0.0 } # Red
+	bg[NORMAL] = {0.0, 0.0, 0.0}	
+}
+widget "*statusbar"  style "StatusBar"
+
+style "Gawgrip" { 
+	bg[NORMAL] = {0.9, 0.8, 0.8}	
+}
+#widget "*gawgrip" style "Gawgrip"

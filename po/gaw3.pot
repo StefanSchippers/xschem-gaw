@@ -1,0 +1,969 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the gaw3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gaw3 20190716\n"
+"Report-Msgid-Bugs-To: www.rvq.fr\n"
+"POT-Creation-Date: 2020-06-21 11:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/datafile.c:192
+msgid ""
+"WaveVar Variable.\n"
+"Drag-and-Drop to a WavePanel.\n"
+"Or select a Panel and left click this button.\n"
+"Right click gives some other commands.\n"
+msgstr ""
+
+#: src/datafile.c:259
+msgid "wdata is NULL"
+msgstr ""
+
+#: src/gawzoom.c:166
+msgid ""
+"\n"
+"\n"
+"This function will zoom centered on cursor 0\n"
+"But you need first set the cursor 0 by left click in DrawingArea\n"
+msgstr ""
+
+#: src/gawzoom.c:188
+msgid ""
+"\n"
+"\n"
+"This function will zoom between the 2 cursors\n"
+"But you need first set the cursor 0 by left click in DrawingArea\n"
+"and the cursor 1 by middle click in DrawingArea\n"
+msgstr ""
+
+#: src/gawzoom.c:213
+msgid ""
+"\n"
+"\n"
+"No Zoom X to cancel\n"
+msgstr ""
+
+#: src/gawzoom.c:359
+msgid "Gaw axis settings"
+msgstr ""
+
+#: src/gawzoom.c:362 src/gawsnd.c:461 src/gawfile.c:194 src/gawimg.c:263
+#: src/gawmain.c:260 src/gawcolor.c:364
+msgid "_Cancel"
+msgstr ""
+
+#: src/gawzoom.c:364 src/gawsnd.c:463 src/gawmain.c:277 src/gawcolor.c:362
+msgid "_OK"
+msgstr ""
+
+#: src/gawzoom.c:371
+msgid "Global X Axis"
+msgstr ""
+
+#: src/gawzoom.c:379
+msgid "Panel Y Axis"
+msgstr ""
+
+#: src/gawzoom.c:386
+msgid "min"
+msgstr ""
+
+#: src/gawzoom.c:396
+msgid "max"
+msgstr ""
+
+#: src/gawzoom.c:406
+msgid "Current"
+msgstr ""
+
+#: src/gawzoom.c:416
+msgid "New:"
+msgstr ""
+
+#: src/gawzoom.c:517
+msgid "Zoom to"
+msgstr ""
+
+#: src/gawzoom.c:531
+msgid "dialog OK"
+msgstr ""
+
+#: src/gawsnd.c:245
+msgid "no soundcards found..."
+msgstr ""
+
+#: src/gawsnd.c:254
+#, c-format
+msgid "control open (%i): %s"
+msgstr ""
+
+#: src/gawsnd.c:258
+#, c-format
+msgid "control hardware info (%i): %s"
+msgstr ""
+
+#: src/gawsnd.c:338
+#, c-format
+msgid "duration changed: text = '%s', val =  %0.2f"
+msgstr ""
+
+#: src/gawsnd.c:362
+#, c-format
+msgid "size changed: text = '%s', val =  %0.2f"
+msgstr ""
+
+#: src/gawsnd.c:376
+#, c-format
+msgid "input changed: text = '%s', control = '%s', val = %d"
+msgstr ""
+
+#: src/gawsnd.c:403
+#, c-format
+msgid "card changed: idex = %s device = %s"
+msgstr ""
+
+#: src/gawsnd.c:420
+#, c-format
+msgid "format changed: text =  %s, val = %d"
+msgstr ""
+
+#: src/gawsnd.c:438
+#, c-format
+msgid "rate changed: text = %s, val =  %d"
+msgstr ""
+
+#: src/gawsnd.c:458
+msgid "Sound card settings and Capture"
+msgstr ""
+
+#: src/gawsnd.c:470
+msgid " Sound card setting"
+msgstr ""
+
+#: src/gawsnd.c:478
+msgid "Card"
+msgstr ""
+
+#: src/gawsnd.c:484
+msgid "Input"
+msgstr ""
+
+#: src/gawsnd.c:512
+msgid "Sample Rate"
+msgstr ""
+
+#: src/gawsnd.c:518
+msgid "Sample Format"
+msgstr ""
+
+#: src/gawsnd.c:559
+msgid " Capture Settings"
+msgstr ""
+
+#: src/gawsnd.c:566
+msgid "Duration : Seconds"
+msgstr ""
+
+#: src/gawsnd.c:572
+msgid "Sample number"
+msgstr ""
+
+#: src/gawsnd.c:607
+msgid "dialog OK loading fom sound card"
+msgstr ""
+
+#: src/gawabout.c:48
+msgid "Gtk3 Analog Wave viewer"
+msgstr ""
+
+#: src/gawio.c:110
+#, c-format
+msgid "Variable %s already defined"
+msgstr ""
+
+#: src/gawio.c:133 src/gawio.c:190
+#, c-format
+msgid "Variable %s not defined"
+msgstr ""
+
+#: src/gawio.c:148 src/gawio.c:394
+#, c-format
+msgid "Expected number at row %d, col %d"
+msgstr ""
+
+#: src/gawio.c:262
+#, c-format
+msgid "Can't export to file %s format %s"
+msgstr ""
+
+#: src/gawio.c:275
+#, c-format
+msgid "Bad spec for color %s"
+msgstr ""
+
+#: src/gawio.c:334
+#, c-format
+msgid "Can't load file %s format %s"
+msgstr ""
+
+#: src/gawio.c:351
+msgid "Expecting number"
+msgstr ""
+
+#: src/gawio.c:417
+#, c-format
+msgid "%s table not defined"
+msgstr ""
+
+#: src/gawio.c:557
+msgid "Current table not defined"
+msgstr ""
+
+#: src/gawio.c:565
+#, c-format
+msgid "Bad command: '%s'"
+msgstr ""
+
+#: src/gawio.c:598
+#, c-format
+msgid "Closing server connection : status %d"
+msgstr ""
+
+#: src/gawio.c:605
+#, c-format
+msgid "Unexpected Condition %d"
+msgstr ""
+
+#: src/gawio.c:618
+#, c-format
+msgid "Connected: %s %s\n"
+msgstr ""
+
+#: src/gawio.c:646
+#, c-format
+msgid "listen %s"
+msgstr ""
+
+#: src/gawfile.c:53
+#, c-format
+msgid "%s formats"
+msgstr ""
+
+#: src/gawfile.c:103
+msgid "All Data formats"
+msgstr ""
+
+#: src/gawfile.c:123 src/gawimg.c:136
+msgid "All files"
+msgstr ""
+
+#: src/gawfile.c:143
+msgid "Data Formats"
+msgstr ""
+
+#: src/gawfile.c:184
+msgid "_Open"
+msgstr ""
+
+#: src/gawfile.c:188 src/gawimg.c:264
+msgid "_Save"
+msgstr ""
+
+#: src/gawfile.c:191 src/gawimg.c:260
+msgid "Select file"
+msgstr ""
+
+#: src/gawfile.c:255
+msgid ""
+"\n"
+"\n"
+"No waves displayed"
+msgstr ""
+
+#: src/gawfile.c:373 src/gawmain.c:697
+#, c-format
+msgid "file '%s' do not exist."
+msgstr ""
+
+#: src/gawimg.c:120
+msgid "All img formats"
+msgstr ""
+
+#: src/gawimg.c:164
+msgid "Gtk Image Formats"
+msgstr ""
+
+#: src/gawimg.c:190
+msgid "Export timeout"
+msgstr ""
+
+#: src/gawimg.c:198
+msgid "timeout ms:"
+msgstr ""
+
+#: src/gawmain.c:265
+msgid "Fatal - "
+msgstr ""
+
+#: src/gawmain.c:267
+msgid "Gaw Dialog"
+msgstr ""
+
+#: src/gawmain.c:627
+msgid "Welcome to gaw"
+msgstr ""
+
+#: src/gawmain.c:768
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]... [FILE]...\n"
+"\n"
+"                : display analog waveforms from input FILE...\n"
+" [-h]           : print list of options\n"
+" [-d]           : set debug mode\n"
+" [-rf fmt]      : specify spice format for input file\n"
+" [-pf fmt]      : specify a printf format for output file\n"
+" [-p num]       : port number for inside server\n"
+" [-C name]      : configuration dir or file name\n"
+msgstr ""
+
+#: src/gawmain.c:814
+msgid ""
+"\n"
+"\n"
+"This function requires a panel to be selected\n"
+"Select a panel by left clicking in one DrawingArea\n"
+msgstr ""
+
+#: src/gawmain.c:823
+msgid "Compile with -DMSG_DEBUG, to get debug infos."
+msgstr ""
+
+#: src/gawcolor.c:30 lib/appclass.c:43 lib/appclass.c:75 lib/appclass.c:90
+#: lib/appclass.c:104 lib/appclass.c:123 lib/appclass.c:136
+msgid "passed null ptr"
+msgstr ""
+
+#: src/gawcolor.c:60
+#, c-format
+msgid "Can't find color for '%s'"
+msgstr ""
+
+#: src/gawcolor.c:291
+msgid "Changing wave color"
+msgstr ""
+
+#: src/gawcolor.c:308
+msgid "Changing grid color"
+msgstr ""
+
+#: src/gawcolor.c:359
+msgid "Gaw panel colors settings"
+msgstr ""
+
+#: src/gawcolor.c:372
+msgid "Panel Colors Settings"
+msgstr ""
+
+#: src/gawcolor.c:382
+msgid "Background Color:"
+msgstr ""
+
+#: src/gawcolor.c:396
+msgid "Grid Color:"
+msgstr ""
+
+#: src/gawcolor.c:409
+msgid "Highlight Color:"
+msgstr ""
+
+#: src/gawcolor.c:422
+msgid "Select Range Color:"
+msgstr ""
+
+#: src/gawcolor.c:435
+msgid "Cursor 0 Color:"
+msgstr ""
+
+#: src/gawcolor.c:448
+msgid "Cursor 1 Color:"
+msgstr ""
+
+#: src/gawcolor.c:461
+msgid "Wave button bg Color:"
+msgstr ""
+
+#: src/gawcolor.c:474
+msgid "List box button fg Color:"
+msgstr ""
+
+#: src/gawcolor.c:487
+msgid "List box button bg Color:"
+msgstr ""
+
+#: src/gawtext.c:375
+msgid "Gaw Text Edit"
+msgstr ""
+
+#: src/gawtext.c:377
+msgid "Gaw Text New"
+msgstr ""
+
+#: src/gawtext.c:388
+msgid "Text font and colors"
+msgstr ""
+
+#: src/gawtext.c:413
+msgid "Bg:"
+msgstr ""
+
+#: src/gawtext.c:431
+msgid "Fg:"
+msgstr ""
+
+#: src/gawtext.c:449
+msgid "Angle:"
+msgstr ""
+
+#: src/gawtext.c:480
+msgid "Enter Text"
+msgstr ""
+
+#: src/gawtext.c:501
+msgid ""
+"Copy current settings to userPrefs\n"
+"Note: Default settings are taken from userPrefs\n"
+"File/save conf to retrieve this settings at next startup"
+msgstr ""
+
+#: src/gawtext.c:513
+msgid ""
+"Draw current text in a panel\n"
+"Move the pointer to a panel and click left"
+msgstr ""
+
+#: src/gawtext.c:523
+msgid "Close this dialog window\n"
+msgstr ""
+
+#: src/gawgrip.c:28
+#, c-format
+msgid "Panel size w %d h %d"
+msgstr ""
+
+#: src/gawdnd.c:121
+#, c-format
+msgid "bad magic number 0x%x"
+msgstr ""
+
+#: src/gawdnd.c:174
+msgid "I was dropped on the root window"
+msgstr ""
+
+#: src/gawdnd.c:176
+msgid "source type string"
+msgstr ""
+
+#: src/gawwave.c:170
+msgid ""
+"Visible Wave button:\n"
+"\n"
+"Click button 1\n"
+" to select wave\n"
+"\n"
+"Press button 3\n"
+" for options menus\n"
+"\n"
+"Drag button to move,\n"
+" copy or delete wave"
+msgstr ""
+
+#: src/gawwave.c:199 src/gawapp.c:293
+#, c-format
+msgid "measure: cursor1 - cursor0"
+msgstr ""
+
+#: src/gawwave.c:202
+#, c-format
+msgid "measure: variable(cursor%d)"
+msgstr ""
+
+#: src/gawapp.c:65
+msgid "I don't want to remove the last panel!"
+msgstr ""
+
+#: src/gawapp.c:296
+#, c-format
+msgid "measure: cursor%d"
+msgstr ""
+
+#: src/gawapp.c:572
+msgid ""
+"You are going to display a non Logarithm waveform\n"
+"in a Logarithm scaled panel.\n"
+"If you click OK, the waveform will be displayed,\n"
+"and the scale will be reverted to linear.\n"
+"Click Cancel to abort the operation\n"
+msgstr ""
+
+#: src/gawapp.c:762
+msgid ""
+"\n"
+"\n"
+"No wave selected for Delete"
+msgstr ""
+
+#: src/gawda.c:427
+#, c-format
+msgid "Panel W %d H %d X %d Y %d"
+msgstr ""
+
+#: src/userprefs.c:158
+#, c-format
+msgid "Can't stat '%s'."
+msgstr ""
+
+#: src/userprefs.c:226
+#, c-format
+msgid "Variable '%s' ignored. Val '%s' at line %d"
+msgstr ""
+
+#: src/userprefs.c:309
+#, c-format
+msgid "Can't open file '%s': %s\n"
+msgstr ""
+
+#: src/userprefs.c:333
+#, c-format
+msgid ""
+"Bad configuration file at line %d :\n"
+" Variable '%s' not found in preferences table.\n"
+"May-be remove the file '%s' and run %s again"
+msgstr ""
+
+#: src/userprefs.c:453 src/userprefs.c:577 src/userprefs.c:581
+#, c-format
+msgid "Can't open file '%s' - %s"
+msgstr ""
+
+#: src/userprefs.c:475
+#, c-format
+msgid "created config file '%s'"
+msgstr ""
+
+#: src/userprefs.c:490
+#, c-format
+msgid "rcparse returned %d - Stopping"
+msgstr ""
+
+#: lib/ss_wav.c:93 lib/sndstream.c:89
+#, c-format
+msgid "channel_%d"
+msgstr ""
+
+#: lib/ss_wav.c:101
+#, c-format
+msgid "wav@%d"
+msgstr ""
+
+#: lib/ss_wav.c:129 lib/ss_spice2.c:180
+#, c-format
+msgid "unexpected EOF at dvar %d"
+msgstr ""
+
+#: lib/ss_wav.c:205
+msgid "Wav write error"
+msgstr ""
+
+#: lib/fdbuf.c:42
+#, c-format
+msgid "Can't open file '%s'"
+msgstr ""
+
+#: lib/fdbuf.c:126
+#, c-format
+msgid "Seek error '%s': %s"
+msgstr ""
+
+#: lib/sockcon.c:119
+#, c-format
+msgid "Can't open socket - err = %s"
+msgstr ""
+
+#: lib/sockcon.c:121
+#, c-format
+msgid "Can't bind - err = %s"
+msgstr ""
+
+#: lib/sockcon.c:161
+#, c-format
+msgid "Can't close socket %d - %s"
+msgstr ""
+
+#: lib/sockcon.c:255
+#, c-format
+msgid "Can't get peer name.- %s"
+msgstr ""
+
+#: lib/sockcon.c:316
+#, c-format
+msgid "Can't connect socket - err = %d %s\n"
+msgstr ""
+
+#: lib/sockcon.c:402
+msgid "Linger mode could not be enabled."
+msgstr ""
+
+#: lib/sockcon.c:413
+msgid "Keepalive mode could not be enabled."
+msgstr ""
+
+#: lib/sockcon.c:421
+msgid "TcpNoDelay mode could not be enabled."
+msgstr ""
+
+#: lib/sockcon.c:435
+msgid "Priority mode could not be enabled."
+msgstr ""
+
+#: lib/sockcon.c:437
+msgid "Priority mode not supported by the OS."
+msgstr ""
+
+#: lib/sockcon.c:449
+msgid "SetSndbuf mode could not be enabled."
+msgstr ""
+
+#: lib/wavetable.c:135
+#, c-format
+msgid "Try to remove not existing index %d ntables %d"
+msgstr ""
+
+#: lib/ss_spice3.c:70 lib/ss_nsout.c:107
+#, c-format
+msgid "%d: syntax error, expected \"keyword:\""
+msgstr ""
+
+#: lib/ss_spice3.c:89 lib/ss_spice3.c:97
+#, c-format
+msgid "%d: syntax error, expected integer"
+msgstr ""
+
+#: lib/ss_spice3.c:103
+#, c-format
+msgid "%d: \"Variables:\" before \"No. Variables:\""
+msgstr ""
+
+#: lib/ss_spice3.c:117
+#, c-format
+msgid "%d: Unexpected EOF in \"Variables:\" at var %d"
+msgstr ""
+
+#: lib/ss_spice3.c:126
+#, c-format
+msgid "%d: expected number name type"
+msgstr ""
+
+#: lib/ss_spice3.c:147
+#, c-format
+msgid ""
+"%s: line %d:\n"
+"EOF without \"Values:\" in header"
+msgstr ""
+
+#: lib/ss_spice3.c:237 lib/ss_hspice.c:418
+#, c-format
+msgid "unexepected EOF in data at offset 0x%lx"
+msgstr ""
+
+#: lib/ss_spice3.c:262
+#, c-format
+msgid ""
+"%s:\n"
+"EOF or error reading data field %d in row %d; file is incomplete."
+msgstr ""
+
+#: lib/fileformat.c:133
+#, c-format
+msgid ""
+"internal error (in regexp %s):\n"
+"  %s"
+msgstr ""
+
+#: lib/fileformat.c:261
+#, c-format
+msgid ""
+"%s:\n"
+" is not a  \"%s\" Format."
+msgstr ""
+
+#: lib/fileformat.c:273
+#, c-format
+msgid "%s: couldn't read with any format"
+msgstr ""
+
+#: lib/fileformat.c:289
+#, c-format
+msgid "Can't find format '%s'"
+msgstr ""
+
+#: lib/fileformat.c:295
+#, c-format
+msgid "Write function not yet implemented for format '%s'"
+msgstr ""
+
+#: lib/fileformat.c:301 lib/msglog.c:319
+#, c-format
+msgid "Can't open file '%s': %s"
+msgstr ""
+
+#: lib/sndparams.c:67
+msgid "Broken configuration for this PCM: no configurations available"
+msgstr ""
+
+#: lib/sndparams.c:73
+msgid "Access type not available"
+msgstr ""
+
+#: lib/sndparams.c:78
+msgid "Sample format non available"
+msgstr ""
+
+#: lib/sndparams.c:83
+msgid "Channels count non available"
+msgstr ""
+
+#: lib/sndparams.c:92
+#, c-format
+msgid "%s : rate is not accurate (requested = %iHz, got = %iHz)"
+msgstr ""
+
+#: lib/sndparams.c:129
+msgid "Unable to install hw params:"
+msgstr ""
+
+#: lib/sndparams.c:136
+#, c-format
+msgid "Can't use period equal to buffer size (%lu == %lu)"
+msgstr ""
+
+#: lib/sndparams.c:172
+msgid "unable to install sw params:"
+msgstr ""
+
+#: lib/sndparams.c:183 lib/sndparams.c:216
+msgid "not enough memory"
+msgstr ""
+
+#: lib/sndparams.c:202
+#, c-format
+msgid "audio open error: %s"
+msgstr ""
+
+#: lib/sndparams.c:208
+#, c-format
+msgid "info error: %s"
+msgstr ""
+
+#: lib/sndparams.c:323
+#, c-format
+msgid "Unsupported bit size %d.\n"
+msgstr ""
+
+#: lib/sndparams.c:391
+#, c-format
+msgid "Error in snd_pcm_readi - %s"
+msgstr ""
+
+#: lib/sndparams.c:397
+#, c-format
+msgid "Error in pcm_read - frames read %ld requested %ld"
+msgstr ""
+
+#: lib/sndparams.c:469
+#, c-format
+msgid "Mixer %s open error: %s"
+msgstr ""
+
+#: lib/sndparams.c:473
+#, c-format
+msgid "Mixer attach %s error: %s"
+msgstr ""
+
+#: lib/sndparams.c:477
+#, c-format
+msgid "Mixer register error: %s"
+msgstr ""
+
+#: lib/sndparams.c:482
+#, c-format
+msgid "Mixer %s load error: %s"
+msgstr ""
+
+#: lib/sndparams.c:530
+#, c-format
+msgid "Unable to find simple control '%s', %i"
+msgstr ""
+
+#: lib/sndstream.c:81
+msgid "Can't initialize sound card"
+msgstr ""
+
+#: lib/sndstream.c:114
+#, c-format
+msgid "EOF or error reading data field %d in row %d; file is incomplete."
+msgstr ""
+
+#: lib/ss_nsout.c:113 lib/ss_nsout.c:121 lib/ss_nsout.c:129
+#, c-format
+msgid "%d: syntax error, expected number"
+msgstr ""
+
+#: lib/ss_nsout.c:141
+#, c-format
+msgid "%d: syntax error, expected varname"
+msgstr ""
+
+#: lib/ss_nsout.c:148
+#, c-format
+msgid "%d: syntax error, expected var-index"
+msgstr ""
+
+#: lib/ss_nsout.c:161
+#, c-format
+msgid "%d: syntax error, expected variable type"
+msgstr ""
+
+#: lib/ss_nsout.c:177
+#, c-format
+msgid "%d: no variable indices found in header"
+msgstr ""
+
+#: lib/ss_nsout.c:180
+#, c-format
+msgid "%d: EOF without data-line in header"
+msgstr ""
+
+#: lib/ss_nsout.c:247
+#, c-format
+msgid "%s:%d: expected value"
+msgstr ""
+
+#: lib/ss_cazm.c:149
+#, c-format
+msgid "line %d: syntax error in header"
+msgstr ""
+
+#: lib/ss_cazm.c:210
+#, c-format
+msgid ""
+"%s:\n"
+"line %d: expected number; maybe this isn't an ascii data file at all?"
+msgstr ""
+
+#: lib/ss_cazm.c:221
+#, c-format
+msgid "%s:%d: data field %d missing"
+msgstr ""
+
+#: lib/appmem.c:90
+msgid "malloc failed"
+msgstr ""
+
+#: lib/appmem.c:114
+msgid "malloc0 failed"
+msgstr ""
+
+#: lib/appmem.c:138
+msgid "realloc failed"
+msgstr ""
+
+#: lib/spicestream.c:199
+#, c-format
+msgid ""
+"independent variable is not nondecreasing at row %d; ival=%g last_ival=%g - "
+"line %d"
+msgstr ""
+
+#: lib/ss_hspice.c:135
+msgid "internal error - failed to find end of header"
+msgstr ""
+
+#: lib/ss_hspice.c:174
+#, c-format
+msgid "unexepected values in block header at offset 0x%lx"
+msgstr ""
+
+#: lib/ss_hspice.c:515
+#, c-format
+msgid ""
+"%s:\n"
+"EOF or error reading data field %d in row %d of table %d; file is incomplete."
+msgstr ""
+
+#: lib/ss_hspice.c:544
+msgid "EOF or error reading sweep parameter"
+msgstr ""
+
+#: lib/stest.c:21
+#, c-format
+msgid "%s  [options] <source file>\n"
+msgstr ""
+
+#: lib/stest.c:22
+#, c-format
+msgid "                : test and convert spice formats\n"
+msgstr ""
+
+#: lib/stest.c:23
+#, c-format
+msgid " [-rf fmt]      : specify spice format for input file\n"
+msgstr ""
+
+#: lib/stest.c:24
+#, c-format
+msgid " [-wf fmt]      : specify spice format for outfile file\n"
+msgstr ""
+
+#: lib/stest.c:25
+#, c-format
+msgid " [-o file]      : specify output file\n"
+msgstr ""
+
+#: lib/stest.c:26
+#, c-format
+msgid " [-pf fmt]      : specify printf format in output file\n"
+msgstr ""
+
+#: lib/stest.c:27
+#, c-format
+msgid " [-rl]          : list available spice input format\n"
+msgstr ""
+
+#: lib/stest.c:28
+#, c-format
+msgid " [-wl]          : list available spice output format\n"
+msgstr ""
+
+#: lib/stest.c:77
+msgid "Spice input formats"
+msgstr ""
+
+#: lib/stest.c:80
+msgid "Spice output formats"
+msgstr ""
+
+#: lib/wavevar.c:181
+#, c-format
+msgid "assertion failed: lx <= ival for %s: ival=%g li=%d lx=%g"
+msgstr ""

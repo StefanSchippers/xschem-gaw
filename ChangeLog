@@ -1,0 +1,246 @@
+Tue Sep 22 09:29:01 CEST 2020
+   - patch from stephan adding a 'reload_all' ttg comand.
+   - update wds used by gawio when issuing the global reload all command from
+     menu.
+     
+Sun Jun 21 11:38:49 CEST 2020
+   - patch from Stephan adding color to a visible wave when gaw is driven by
+     external commands (ttg). Stephan use xschem.
+   
+Sun Jan 26 09:33:00 CET 2020
+   - suppress empty lines when reading spice3 format in ss_spice3.c.
+   
+Tue Jul 16 12:52:33 CEST 2019
+   - added gaw3.spec in contrib for rpm build.
+   
+Sun Jul 16 10:38:01 CEST 2017
+   - removed some deprecated from gawda.h
+   - added  X axix conversion to status bar
+   
+Thu Jul 13 10:42:59 CEST 2017
+   - added an X axix conversion function. Time_t independant variable is
+     usefull to record some data like electricity counter for example.
+     A conversion to date time makes result more meaningfull for users.
+     
+Mon Jul 10 11:43:02 CEST 2017
+   - let users to change colors from inside the application for buttons
+     when the destop theme make then unreadable.
+   
+Mon Jun  5 14:28:49 CEST 2017
+   - 'GAWMISCL_H' is used as a header guard
+
+Sat Mar 25 19:18:50 CET 2017
+   - modified gaw-gtkrc.css to get clear labels in gaw window.
+   - corrected bug on algo selection
+   - corrected bug on drag and drop Add panel button
+   - corrected bug in gawpanel : clicking in a zoomed windows remved the zoom.
+   
+Sat Jan 21 10:23:57 CET 2017
+   - modified gaw-gtkrc.css to remove 'Theme parsing error' with gtk+-3.20.
+   
+Mon Jul  4 08:17:55 CEST 2016
+   - replaced prelight with hover in gaw-gtkrc.css
+   
+Sat Mar  5 13:47:15 CET 2016
+   - gtk only generate deprecated. Depending on your gtk version don't be
+     in hurry to take the last gaw version. It may mot compile...
+   
+Sat Jul 11 13:54:09 CEST 2015
+   - corected some Gtk-Critical messages appearing on Centos 7.
+   
+Sat Feb 28 16:33:18 CET 2015
+   - Patch from Glenn Ramalho. ss_spice3.c : adaptation of Spice3 format to
+     the output of Cadence Spectre tools.
+     
+Sun Jan  4 09:39:12 CET 2015
+   - Patch from Sergey Bashkiro. Adding more tests on NaNs values.
+   
+Mon Oct 27 13:38:24 CET 2014
+   - deprecated from gtk looks to be stabilized ?...
+   
+Sat Apr  5 16:28:32 CEST 2014
+   - Replaced memcpy by memmove for memory areas that do overlap.
+    Some strings were not displayed correctly.
+    
+Sun Mar  9 16:23:38 CEST 2014
+   - Corrected about 200 deprecated produced by the GTK-- team.
+     Warning new bugs in prevision.
+
+Thu Aug  1 08:00:06 CEST 2013
+   - patch contribued by Thomas Russo for compilation on FreeBSD.
+   
+Sun May 12 09:33:16 CEST 2013
+   - added selection of drawing algo and line clip algo
+
+Sun May  5 17:38:46 CEST 2013
+   - corrected ss_hspice.c : ss_hspice binary was only reading one block of
+     data.
+   - segmentation fault in gawfile.c
+   - a lot of modifications to track gtk3 deprecated Gdkcolor => GdkRGBA.
+  
+Fri Jan 11 19:21:10 CET 2013
+   - changed message "May-be remove the file '%s' and run %s again") 
+     in userprefs.h userprefs.c
+   
+Thu Sep 27 09:22:07 CEST 2012
+   - project renamed gaw3 as GTK-3: there are too many differences in the
+     GTK2, GTK3 interface that it seems necessary to separate the code
+     instead of putting an ifdef at each line.
+   - removed all ifdef HAVE_GTK300 and GTK2 specific code
+   - changed gtk_table_* -> gtk_grid_*
+   - changed gtk_hbox_new, gtk_vbox_new -> gtk_box_new
+   - changed gtk_hscrollbar_new, gtk_vscrollbar_new -> gtk_scrollbar_new
+   
+Fri Oct 14 16:15:32 CEST 2011
+    - test ! $gtk30 no longer works in fedora16
+      changed to test $gtk30 = false  || test ! $gtk30 
+Tue Oct 11 11:22:32 CEST 2011
+    - added installation of gaw.desktop gaw.png.
+    
+Thu Sep 29 17:26:34 CEST 2011
+    - corrected an incomplete change :OSX do not recognize the type
+      __compar_fn_t. Changed with a local typedef.
+Tue Sep  6 11:01:39 CEST 2011
+    - Display problem with a bad format input file. Discard bad data and
+      show a warning.
+      
+Thu Sep  1 08:51:58 CEST 2011
+    - OSX do not recognize the type __compar_fn_t. Changed with a local
+      typedef.
+    - Ubuntu do not like the test "if test $gtk30 = false ;". Changed to
+      "if test ! $gtk30 ;".
+    - Running gaw on Ubuntu provides a lot of complains about missing
+      libraries. Install these packages. There is still a 
+      Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget
+      with width 18 and height -5
+      There is nothing I can do in gaw. Just wait a fixed gtk library.
+      
+Thu Aug 11 19:02:14 CEST 2011
+    - compiled and run with gtk3 after a lot of modifications consisting of
+      specific code switched with #ifdef HAVE_GTK300.
+    - replaced (for gtk3 only) gaw-gtkrc with  gaw-gtkrc.css
+    - fixed a segmentation fault when gaw exit after try to load an inexistent
+      file.
+      
+Tue Aug  9 08:28:03 CEST 2011
+    - removed reference to GdkColormap if HAVE_GTK300 is defined. Ubuntu have
+      not this symbol defined, it is deprecated.
+Wed Aug  3 11:37:29 CEST 2011
+    - Modified configure.ac to compile with gtk3.0.
+    - Modified userprefs to create a new complete gawrc at startup.
+    - Added filters to file selection.
+    - Added a text tool to draw comments in panel.
+Tue Jul 26 18:36:40 CEST 2011
+    - migration to gtk3 step 2. Replaced Gdk drawing with Cairo. Removed
+      GdkGC stuff.
+Thu Jul  7 19:07:42 CEST 2011
+    - a lot of modifications with the same functionnalities for preparing the
+    migration to gtk3. See Migrating from GTK+ 2.x to GTK+ 3 in
+    GTK+ Reference Manual.
+Fri May 20 17:43:48 CEST 2011
+    - corrected, Segmentation fault in gawdnd.c after reloading a file and
+      deleting waves with Dnd. wavevars were not correctly updated in all
+      places.
+Mon Apr 25 11:27:39 CEST 2011
+    - added gaw.desktop gaw.png for gnome desktop menu
+Thu Mar 17 09:49:59 CET 2011
+    - Suppress Gtk-Warning when destroying gaw. Gtkbegin to kill the gdk window
+      that is not longer valid for drawing. (gawda.c)
+Fri Feb 18 13:09:20 CET 2011
+    - corrected duplicated variables in configuration file
+    - On macosx, detection of screen size does not work; to correct, a default
+      value is set when this fails. This value can be hand modified later in
+      the configuration file
+    - corrected, in gawlabel.c, a bad list element producing crash.
+    - corrected, Segmentation fault when allocating segments for grid, gawda.c.
+      
+Mon Jan 17 16:25:09 CET 2011
+    - remove puntuation characters at beginning of line 1 of ascii data file,
+      these characters confuse field detection.
+    - changed drawing algorithm to make display more realistic when more
+      than 2 datas points to 1 pixel on the screen.
+    - reworked French language file.
+      Added separated action entries for the toolbar for labelling purpose.
+    
+Mon Jan 10 10:29:59 CET 2011
+    - web site change herveq.fr become rvq.fr (same french spelling !)
+    
+Sat Sep 18 17:32:43 CEST 2010
+    - replaced rcfile.c with userprefs.c
+    - Corrected segmentation fault in function reload
+    
+2010-09-07  gettextize  <bug-gnu-gettext@gnu.org>
+    - m4/iconv.m4: Upgrade to gettext-0.18.1.
+    - Makefile.am (ACLOCAL_AMFLAGS): New variable.
+    - configure.ac (AM_GNU_GETTEXT_VERSION): Bump to 0.18.1.
+
+Thu Sep  2 14:52:27 CEST 2010
+    - modifications to compile on CentOS 5.5 with gtk 2.10.4
+    
+Fri Aug 27 10:40:54 CEST 2010
+    - always place stdlib.h before glib.h for compiling on CentOS 5.5
+    - added some hack for compiling with older version of gtk
+    
+Fri Aug  6 14:57:08 CEST 2010
+    - top level table reorganization to insert a scrolled window for panels
+    - lmtable reorganization to simplify ylabels and more ylabels management.
+    - consolidate grid, xLabels and xlabels display.
+    - corrected some bugs in sound card interface.
+    - corrected some bugs with toggle buttons.
+    - internationalization is now functionnal.
+    - added some code to hanle the display of some narrow pics.
+    
+Thu Jul 22 16:15:44 CEST 2010
+    - corrected some GTK-WARNING when deleting panels
+    - corrected display change when trying to delete the last panel
+    - icon GTK_STOCK_DELETE has changed in GTK : I changed it to 
+      GTK_STOCK_CUT in gaw.
+    
+Wed Jul 21 07:33:48 CEST 2010
+    - toolbar style do not work fine with gtk+ 2.20.1. Added toolBarStyle in
+      rc file to save the state of the tyle.
+      
+Fri May 28 08:53:34 CEST 2010
+    - added -lXext -lm to src/Makefile.am for compiler gcc version 4.4.4
+    
+Fri May 14 14:24:23 CEST 2010
+    - Patch from Torsten MAEHNE for compiling on MACOSX :
+      - there is no libasound on OSX (The API is CoreAudio). Gaw sound is
+        disabled.
+      - Solve problems with byte swap declarations.
+
+Tue May  4 11:07:56 CEST 2010
+    - corrected segmentation fault when reloading bad loaded files.
+    - removed some useless lines of code.
+    
+Wed Mar 10 09:36:12 CET 2010
+    - corrected bug in dnd.
+    
+Thu Jan 21 16:55:31 CET 2010
+    - added linear and logarith grid and labels.
+    - corrected zoom problems.
+    - added feature to allow the user to change the set of color in panels.
+    - added internal resize between panels and left side.
+    - added cursors menu.
+
+Thu Nov 19 14:37:29 CET 2009
+    - added talk to gaw
+    - added export all panels to image file.
+    - added multifile load.
+    - added export displayed data.
+    - added possibility to export data in a format known by the library.
+    - added  a capture data from the sound card.
+    - addded a .wav format.
+    - removed some layers of complexity in the library and may be added some
+     ones.
+
+Mon Jun 29 18:19:26 CEST 2009
+   - After a locale problem on MAC OSX, changed all 'atof' to 'g_ascii_strtod'.
+     People have to set locale in environnemnt, if needed.
+
+Fri Jun 26 11:42:36 CEST 2009
+   - spicestream.c : modified to accept line with CRLF
+    
+2009/01/17 : minor changes in common files ( common to other of my projects) 
+             rcfile.c msglog.c to make silent the gcc compiler 4.3.2 
+	     warnings under X86_64 architecture.

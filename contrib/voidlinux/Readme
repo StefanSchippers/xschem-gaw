@@ -1,0 +1,10 @@
+Void Linux package generation with xbps-src
+
+1 - download void-packages with git
+2 - read Manual.md
+3 - copy the directoy srcpkgs to void-packages
+4 - modify the checksum= in the void-packages/srcpkgs/gaw3/template 
+    you get the checksum with sha256sum gaw3-20200922.tar.gz or
+    from the file gaw3-20200922.tar.gz.sum
+5 compile the package with:
+    ./xbps-src pkg gaw3

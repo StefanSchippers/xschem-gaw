@@ -1,0 +1,90 @@
+/* gaw-gtkrc.css */
+
+@define-color wavecolor0  #6680ff;  /* blue */
+@define-color wavecolor1  #ff0000;  /* red */
+@define-color wavecolor2  #00ff00;  /* green */
+@define-color wavecolor3  #ffff00;  /* yellow */
+@define-color wavecolor4  #00ffff;  /* cyan */
+@define-color wavecolor5  #ff00ff;  /* purple */
+
+@define-color graticule  #662828;   /* dark red */
+@define-color highlight  #ffffff;   /* white */
+@define-color srange     #ffffff;   /* white */
+
+@define-color dacursor0  #ffffff;   /* white */
+@define-color dacursor1  #ffff00;   /* yellow */
+
+@define-color da-bg  #000000;   /* black */
+@define-color measure-button-bg  #3E3E3E;   /* black */
+@define-color wave-button-bg     #ffffff;   /* white */
+@define-color lbox-button-fg     #ffffff;   /* white */
+@define-color lbox-button-bg     #3E3E3E;   /* black */
+
+* {
+    font-family: Sans;
+    font-size: small;
+}
+
+
+#cursor0 {
+    color: #ffffff; /* white */
+}
+
+#cursor1 {
+    color: #ffff00; /* yellow */
+}
+
+#cursorD {
+    color: #00ff00; /* green */
+}
+
+
+/* feel free to play with ... */
+#statusbar {
+    color: #ff0000;
+}	
+
+#gawgrip {
+    background-color: #e0c0a0;
+}
+
+#measurebutton {
+    padding: 0px;
+}
+#wavebutton {
+    padding: 0px;
+}
+#data_list_box button {
+    padding: 0px;
+}
+    
+#measurebutton label {
+    background-color: @measure-button-bg;
+    border: 3px solid @measure-button-bg;
+    border-radius: 5px;	
+}
+
+#wavebutton label {
+    background-color: @wave-button-bg;
+    border: 3px solid @wave-button-bg;
+    border-radius: 5px;	
+}
+
+/* menu button and file labels */
+/* uncomment to override your desktop theme */
+/*
+#data_list_box label {
+    color: #ffffff;
+    background-color: #ff3C3C;
+    border: 3px solid #ff3C3C;
+    border-radius: 5px;
+}
+*/
+
+/* buttons in list box */
+#data_list_box button label {
+    color: #ffffff;
+    background-color: @lbox-button-bg;
+    border: 3px solid @lbox-button-bg;
+    border-radius: 5px;
+}

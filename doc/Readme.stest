@@ -1,0 +1,18 @@
+
+Stest is a simple tool to test the functions is this directory, but
+can be used to convert between formats.
+
+To compile :
+cd lib
+make -f stest.mak
+
+For command line options:
+stest -h
+
+Running example to convert spice3 format to ascii
+stest -rf spice3raw -wf ascii -o myfile ../examples/Spice3a
+
+Listing available formats:
+stest -rl
+stest -wl
+

@@ -1,0 +1,209 @@
+Where you can gaw :
+
+You can find gaw on  these websites :
+http://www.rvq.fr
+http://www.herveq.tk
+http://gaw.tuxfamily.org
+
+Please discard http://www.herveq.fr
+
+
+You can find a short description page on this web page:
+http://www.rvq.fr/linux/gaw.php
+
+Note : Fedora 13 : If you don't have icon in menu, run the command :
+gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
+
+
+See directory examples for example of different data file format.
+
+Compiling:
+We need :
+  - Gtk+ libs and headers installed.
+  - Alsa libasound and headers alsa/asoundlib.h installed.
+
+tar zxvf gaw-yyyymmdd.tar.gz
+cd gaw-yyyymmdd
+./configure
+make
+
+If you do not want to embed libasound, try :
+./configure --enable-gawsound=no
+
+If you want to disable nls support :
+./configure --disable-nls
+
+Putting gaw in gnome menu (on Fedora)
+ cp gaw.desktop /usr/local/share/applications
+ cp gaw.png     /usr/local/share/pixmaps/
+
+Runnning gaw :
+  On command line : gaw
+                  : gaw <file to load> ...
+                  : gaw -h    for some options
+
+You can get help : leaving the mouse on a button will generate a tooltips.
+As it is not possible to get a tooltips on a menu item, messages are
+generated in the statusBar. The statusBar is at bottom left corner, and
+displays "Welcome to gaw" when you enter gaw. So you should keep one eye on
+the statusBar and the other on the menu item. This is difficult for some
+people !!!
+
+Sensible areas for Drag and Drop :
+  Sources for Drag and Drop :
+    Any data file icon on desktop or filemanager
+    menu buttons on list windows
+    buttons on left side of panels 
+    
+  Destinations  for Drag and Drop :
+    Add Panel button on menu Bar
+    Delete wave button on menu Bar
+    Drawing Areas
+    Area where X labels are displayed
+   
+Loading file when gaw is running :
+   file/open  + select your file
+   Drag&Drop : from your desktop or your Nautilus to a DrawingArea
+   
+Display wave when not already displayed :
+     Drag&Drop : from buttom in list window  to a DrawingArea
+  or left click in a DrawingArea to select it and double left click on the
+        button  in list window.  
+  or Drag&Drop to area where X labels are displayed. This add a penel.
+  or Drag&Drop to Add Panel Button on MenuBar. This add a penel.
+  
+Display wave when already displayed : move
+   Drag&Drop : from wave buttom at left of DrawingAreas to a DrawingArea
+
+Display wave when already displayed : copy
+   shift+Drag&Drop : from wave buttom at left of DrawingAreas to a DrawingArea
+
+Remove displayed wave
+     select wave with left click on wave button and click delete wave.
+  or select wave with left click on wave button and right click in
+        DrawingArea and select delete wave.
+  or right click on wave button and select delete this wave.
+  or drag the wave button to the trash button (Delete wavein menuBar)
+  
+Set cursors in DrawingArea
+    left click set the first cursor
+    Middle click set the second cursor
+
+Zoom in
+     left click Zoom in button in menu bar.
+  or zoom menu and select Zoom in.
+  or right click in DrawingArea and select Zoom in.
+  or Keyboard : "Z"
+
+Zoom out
+     left click Zoom out button in menu bar.
+  or zoom menu and select Zoom out.
+  or right click in DrawingArea and select Zoom out.
+  or Keyboard : "<shift>Z"
+    
+Zoom a selected X area
+     set the 2 cursors and click Zoom Cursors in menu bar.
+  or right click in DrawingArea and select Zoom X... and 
+       drag the left button on the area to zoom.
+  
+Zoom X undo
+      zoom menu  and select Zoom X full.
+  or  right click in DrawingArea and select Zoom X full.
+  or  Keyboard : "<control>Z"
+
+Zoom Y
+     right click in DrawingArea and select Zoom Y... and 
+       drag the left button on the area to zoom.
+
+Zoom Y undo
+      right click in DrawingArea and select Zoom Y full.
+
+Zoom X+Y
+     Select Zoom X+Y... and 
+       drag the left button on the area to zoom in DrawingArea.
+
+Export to image file in one of the format available in Gtk
+       right click in DrawingArea and select Export to image.
+
+Export data in some available formats
+       click File/Export Data in variable list window, enter the format and
+            filename.
+       usefull for users ? let me know. Anyway it is usefull for testing !!!
+
+Save conf
+      save configuration in $HOME/.gaw/gawrc with the last used input filename
+      which becomes the default input file name.
+      next running gaw will reload this default file.
+Clear def
+      save configuration in $HOME/.gaw/gawrc with clearing the default 
+      input file name.
+
+Multisweep :
+      Multisweep means generate a set of data for a different value of a
+      component. Only Hspice format supports multiweep. You can find an 
+      example in the file examples/invsweep.tr0. So load the file and try 
+      Right click on a button in the list window : y @... and select
+      Add all similar to selected. This will show al the waves for each
+      value of the component.
+
+About data Formats
+=================
+
+In principle Gaw is able to recognize the implemented formats, but due to 
+the lack of definition in some format, it should be very easy to confuse Gaw.
+So it is suggested to provide a format.
+
+There are 2 ways to provide a format :
+  - setting the format in the menu for loading a file.
+  - giving an extension to your file.
+  
+The recognized extensions are :
+   .tr[0-9], .sw[0-9], .ac[0-9]           for hspice
+   .B, .N, .W                             for cazm
+   .raw                                   for spice3raw
+   .rawspice                              for spice2raw
+   .out                                   for nsout
+   .wav                                   for wav
+   .acd, .acs, .dat, .ascii               for ascii
+
+
+Requirements for Gaw
+====================
+ Dependancies :
+   Alsa lib >= 1.0.16
+   gtk+-2.0 >= 2.10.0
+   
+Gaw is developped under Fedora But this does not mean, it should not work on
+others distributions. Instead it means that if there are mistakes due to
+distributions differences, I cannot see them, and you need to report them.
+
+
+Compiled  gaw 20100823:
+========
+Fedora 13
+Linux olix 2.6.33.6-147.fc13.x86_64 #1 SMP Tue Jul 6 22:32:17 UTC 2010 x86_64 x86_64 x86_64 GNU/Linux
+
+   GLIB library version:             2.24.1
+   GTK+ library version:             2.20.1
+   Alsa version:                     1.0.23
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale
+
+Fedora 11
+Linux rvix 2.6.29.6-217.2.8.fc11.i586 #1 SMP Sat Aug 15 00:44:39 EDT 2009 i686 athlon i386 GNU/Linux
+
+   GLIB library version:             2.20.5
+   GTK+ library version:             2.16.6
+   Alsa version:                     1.0.21
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale
+
+
+Frugalware (ppc) :
+Linux imac 2.6.32-fw3 #1 PREEMPT Fri May 7 10:52:40 CEST 2010 ppc GNU/Linux
+
+   GLIB library version:             2.22.4
+   GTK+ library version:             2.18.7
+   Alsa version:                     1.0.22
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale

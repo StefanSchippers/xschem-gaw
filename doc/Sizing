@@ -1,0 +1,37 @@
+Some notes about sizing the panels of gaw.
+
+First of all and ony once, gaw needs to determine the value of the variable
+max_ps_y in the configuration file $HOME/.gaw/gawrc, if this value is 0. And
+this value is 0 after a reset to factory settings and after a first install.
+This variable is used to determine the size of view port of the panel scrolled
+window.
+
+The panel scrolled window can be considered as 2 port: the view port which
+stands on the screen and the virtual port that contains panels. When the
+the virtual port is larger than the view port the scroll bar is shown.
+
+Gaw, in function of the number of panels and the panel height, i.e. value of
+panelHeight variable in $HOME/.gaw/gawrc, calculate  the width and height value
+of the main window  and the height of the virtual port and then set these
+values. In the case of the virtual port, the size is to be considered as a
+minimal size.
+
+In normal running, a user may chang the size of the main window by dragging
+one of the corners of the main window. As a result, the size of the view
+port is changed, it takes the size allocated by the main window.
+The virtual port expands if you give more room and do not
+change if you try to shrink because you have reached the minimal value. In
+the first case the panel size expands, but not in the second case.
+
+A growed panel size is stable. If you add or remove a panel, the size is
+recalculated with the value of panelHeight variable as explained before.
+But if growing is what you want, you can save the configuration file and this
+change value of panelHeight. But this do not giwe a way to lower the
+panelHeight.
+
+To day, the only way is to edit the configuration file once and do not change
+it. Another way could be to create a menu entry to set panelHeight to the
+minimal value. Then the user can then grow it. Another way could be to let
+the user enter his prefered size in a specific window... The subject is open.
+
+

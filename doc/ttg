@@ -1,0 +1,60 @@
+ttg "Talk to gaw" is intended to let your application controls gaw with
+command lines send over a socket. To enable this you need to run gaw with a
+port number, and use the same port in your application :
+gaw -p 1946.
+
+For each line sent, gaw echo back a line feed or an error message and can be
+used for synchronization, if needed.
+
+In directory ttg, you can find an example C program and an example Perl program
+talking to gaw.
+
+Using this method, it is possible to add a column of data to a previosly
+loaded array of data.
+
+Here are the keywords used to send commands.
+
+table_new tblname          # add a new wavetable = set of dataset
+    variables v0 v1 v2 ... vn     #  define variable names
+    vartype   t0 t1 t2 ... tn     # define type for variable
+
+    rowdatas
+    d0 d1 d2 ... dn      # implicit row 0
+    .  .  .  
+    d0 d1 d2 ... dn      # implicit row n
+    enddata 
+    
+    coladd varname vartype   # add a new col
+    coldatas varName         # new data for variable varName 
+      d0
+      .
+      dn
+    enddata 
+    
+    dataset name1          # add a new dataset
+
+enddata                    # finishing enter datas
+
+tabledel tblname           # delete the table
+
+table_set table0           # set table as curent
+table_new table1
+
+panel 4                    # set gaw to display 4 panels
+panel +2                   # set gaw to display 2 more panels
+
+copyvar v1 p0              # display var <varname> in panel 0, automatic color selection
+copyvar v1 p0 #rrggbb      # display var <varname> in panel 0 with color (rr, gg, bb are 2-digit hex numbers)
+copyvar v1 p0 #rrggbbaa    # display var <varname> in panel 0 with color and alpha transparency
+                           # (rr, gg, bb, aa are 2-digit hex numbers)
+
+delvar  v1 p0              # undisplay this wave form
+coladd varname vartype     # add a variable column to the current set
+coldatas varName           # new data for variable varName
+
+load file format           # load an existing file
+export_img file format     # export displayed panels to image file
+export_data file format    # export displayed data to data file
+color_bg #color            # set background color in drawing areas
+grid  on/off               # turn grid on or off
+logx  on/off               # set logx scale

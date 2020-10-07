@@ -1,0 +1,42 @@
+
+GAW data model
+
+DATASET
+
+Central object for data storage is dataset.c dataset.h.
+User datas come, in general, as a form of a set of n variables, each variable
+carryng m rows of datas. The first one should be the independant variable
+and the other the dependant varaibles.
+A variable may have more than one column.
+A variable is stored in a structure WaveVar. Each pointer to WaveVar is stored
+in a GPtrArray hold by dataset itself.
+Gaw stores each column in a auto growing Glib GArray. The size of each entry
+in Garray is size of double. 
+Each pointer to GArray is stored in a GPtrArray hold by dataset itself.
+
+GArray and and GPtrArray are Glib objects. They are auto growing, so rhe
+developper don't need to take care of the size of data. The only constraint is
+variable and data must feed in from column 0 to column n and so from row 0 to
+row m. 
+
+Accessing the data in done with the function dataset_val_get()
+double dataset_val_get(WDataSet *wds, int row, int col )
+{
+   GArray *ary = g_ptr_array_index( wds->datas, col );
+   
+   double *val = &g_array_index (ary, double, row );
+   return *val;
+}
+
+
+WAVETABLE
+User data can have more than one dataset . so these datasets are stored in a 
+GPtrArray hold by WaveTable.
+
+SPICESTREAM
+spicestream and its helper functions is an object to read data from file
+and store them in dataset. The input file may have different formats.
+
+SNDSTREAM
+sndstream is analog to spicestream but handle the sound card.
+

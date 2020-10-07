@@ -1,0 +1,1572 @@
+# French translation of gaw.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Hervé Quillévéré <www.herveq.fr>, 2009.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gaw 20100805\n"
+"Report-Msgid-Bugs-To: www.rvq.fr\n"
+"POT-Creation-Date: 2020-06-21 11:44+0200\n"
+"PO-Revision-Date: 2010-02-02 17:23+0100\n"
+"Last-Translator: Hervé Quillévéré <www.rvq.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/datafile.c:192
+msgid ""
+"WaveVar Variable.\n"
+"Drag-and-Drop to a WavePanel.\n"
+"Or select a Panel and left click this button.\n"
+"Right click gives some other commands.\n"
+msgstr ""
+"Variable dépendante WaveVar.\n"
+"Glisser et déplacer vers la zone de dessin d'un panneau\n"
+"ou\n"
+"Sélectionner d'abord un panneau puis faire un clic gauche sur ce bouton.\n"
+"\n"
+"Le clic droit donne accès à d'autres commandes.\n"
+
+#: src/datafile.c:259
+msgid "wdata is NULL"
+msgstr "wdata vaut NULL"
+
+#: src/gawzoom.c:166
+msgid ""
+"\n"
+"\n"
+"This function will zoom centered on cursor 0\n"
+"But you need first set the cursor 0 by left click in DrawingArea\n"
+msgstr ""
+"\n"
+"\n"
+"Cette fonction effectue un zoom en X centré sur le curseur 0.\n"
+"Vous devez d'abord afficher le curseur 0 en faisant un clic gauche dans une "
+"des zones de dessin.\n"
+
+#: src/gawzoom.c:188
+msgid ""
+"\n"
+"\n"
+"This function will zoom between the 2 cursors\n"
+"But you need first set the cursor 0 by left click in DrawingArea\n"
+"and the cursor 1 by middle click in DrawingArea\n"
+msgstr ""
+"\n"
+"\n"
+"Cette fonction effectue un zoom en X entre les deux curseurs verticaux.\n"
+"Vous devez d'abord afficher les deux curseurs :\t- pour afficher le curseur "
+"0, placer la souris dans une des zones de dessin puis faire un clic gauche\n"
+"\t - pour afficher le curseur 1, placer la souris dans une des zones de "
+"dessin puis faire un clic sur le bouton central de la souris.\n"
+
+#: src/gawzoom.c:213
+msgid ""
+"\n"
+"\n"
+"No Zoom X to cancel\n"
+msgstr ""
+"\n"
+"\n"
+"Pas ou plus de zoom en X à annuler (Zoom = 100%).\n"
+
+#: src/gawzoom.c:359
+msgid "Gaw axis settings"
+msgstr "Gaw - Réglages des axes"
+
+#: src/gawzoom.c:362 src/gawsnd.c:461 src/gawfile.c:194 src/gawimg.c:263
+#: src/gawmain.c:260 src/gawcolor.c:364
+msgid "_Cancel"
+msgstr ""
+
+#: src/gawzoom.c:364 src/gawsnd.c:463 src/gawmain.c:277 src/gawcolor.c:362
+msgid "_OK"
+msgstr ""
+
+#: src/gawzoom.c:371
+msgid "Global X Axis"
+msgstr "Axe X global (commun à tous les panneaux)"
+
+#: src/gawzoom.c:379
+msgid "Panel Y Axis"
+msgstr "Axe Y du panneau sélectionné"
+
+#: src/gawzoom.c:386
+msgid "min"
+msgstr "min"
+
+#: src/gawzoom.c:396
+msgid "max"
+msgstr "max"
+
+#: src/gawzoom.c:406
+msgid "Current"
+msgstr "Actuel"
+
+#: src/gawzoom.c:416
+msgid "New:"
+msgstr "Nouveau"
+
+#: src/gawzoom.c:517
+msgid "Zoom to"
+msgstr "Zoom sur"
+
+#: src/gawzoom.c:531
+msgid "dialog OK"
+msgstr "Dialogue OK"
+
+#: src/gawsnd.c:245
+msgid "no soundcards found..."
+msgstr "Pas de carte son trouvée"
+
+#: src/gawsnd.c:254
+#, c-format
+msgid "control open (%i): %s"
+msgstr "Commande ouverture·(%i):·%s"
+
+#: src/gawsnd.c:258
+#, c-format
+msgid "control hardware info (%i): %s"
+msgstr "Commande info sur matériel (%i) : %s"
+
+#: src/gawsnd.c:338
+#, c-format
+msgid "duration changed: text = '%s', val =  %0.2f"
+msgstr "Durée changée : text = '%s', val =  %0.2f"
+
+#: src/gawsnd.c:362
+#, c-format
+msgid "size changed: text = '%s', val =  %0.2f"
+msgstr "Taille changée : text = '%s', val =  %0.2f"
+
+#: src/gawsnd.c:376
+#, c-format
+msgid "input changed: text = '%s', control = '%s', val = %d"
+msgstr "Entrée changée : text = '%s', control = '%s', val = %d"
+
+#: src/gawsnd.c:403
+#, c-format
+msgid "card changed: idex = %s device = %s"
+msgstr "Carte son changée : idex = %s device = %s"
+
+#: src/gawsnd.c:420
+#, c-format
+msgid "format changed: text =  %s, val = %d"
+msgstr "Format changé : text =  %s, val = %d"
+
+#: src/gawsnd.c:438
+#, c-format
+msgid "rate changed: text = %s, val =  %d"
+msgstr "Taux changé : text = %s, val = %d"
+
+#: src/gawsnd.c:458
+msgid "Sound card settings and Capture"
+msgstr "Réglages de la carte son et de la capture"
+
+#: src/gawsnd.c:470
+msgid " Sound card setting"
+msgstr "Réglage de la carte son"
+
+#: src/gawsnd.c:478
+msgid "Card"
+msgstr "Carte"
+
+#: src/gawsnd.c:484
+msgid "Input"
+msgstr "Entrée"
+
+#: src/gawsnd.c:512
+msgid "Sample Rate"
+msgstr "Taux d'échantillonnage"
+
+#: src/gawsnd.c:518
+msgid "Sample Format"
+msgstr "Format d'échantillonnage"
+
+#: src/gawsnd.c:559
+msgid " Capture Settings"
+msgstr "Réglages de la capture"
+
+#: src/gawsnd.c:566
+msgid "Duration : Seconds"
+msgstr "Durée : secondes"
+
+#: src/gawsnd.c:572
+msgid "Sample number"
+msgstr "Nombre d'échantillons"
+
+#: src/gawsnd.c:607
+msgid "dialog OK loading fom sound card"
+msgstr "Dialogue OK, chargement depuis la carte son"
+
+#: src/gawabout.c:48
+#, fuzzy
+msgid "Gtk3 Analog Wave viewer"
+msgstr "Visualisateur de courbe Gtk Analog Wave"
+
+#: src/gawio.c:110
+#, c-format
+msgid "Variable %s already defined"
+msgstr "Variable %s déjà définie"
+
+#: src/gawio.c:133 src/gawio.c:190
+#, c-format
+msgid "Variable %s not defined"
+msgstr "Variable %s pas définie"
+
+#: src/gawio.c:148 src/gawio.c:394
+#, c-format
+msgid "Expected number at row %d, col %d"
+msgstr "Numbre attendu à la rangée %d, colonne %d"
+
+#: src/gawio.c:262
+#, c-format
+msgid "Can't export to file %s format %s"
+msgstr "Impossible d'exporter le fichier %s au format %s"
+
+#: src/gawio.c:275
+#, c-format
+msgid "Bad spec for color %s"
+msgstr "Mauvaise spécification pour la couleur %s"
+
+#: src/gawio.c:334
+#, c-format
+msgid "Can't load file %s format %s"
+msgstr "Impossible de charger le fichier %s au format %s"
+
+#: src/gawio.c:351
+msgid "Expecting number"
+msgstr "Nombre attendu"
+
+#: src/gawio.c:417
+#, c-format
+msgid "%s table not defined"
+msgstr "Table %s non définie"
+
+#: src/gawio.c:557
+msgid "Current table not defined"
+msgstr "table courante non définie"
+
+#: src/gawio.c:565
+#, c-format
+msgid "Bad command: '%s'"
+msgstr "Mauvaise commande : '%s'"
+
+#: src/gawio.c:598
+#, c-format
+msgid "Closing server connection : status %d"
+msgstr "Fermeture de la connexion serveur : état %d"
+
+#: src/gawio.c:605
+#, c-format
+msgid "Unexpected Condition %d"
+msgstr "Condition inattendue %d"
+
+#: src/gawio.c:618
+#, c-format
+msgid "Connected: %s %s\n"
+msgstr "Connecté : %s %s\n"
+
+#: src/gawio.c:646
+#, c-format
+msgid "listen %s"
+msgstr "A l'écoute de %s"
+
+#: src/gawfile.c:53
+#, c-format
+msgid "%s formats"
+msgstr "Formats %s"
+
+#: src/gawfile.c:103
+msgid "All Data formats"
+msgstr "Tous Formats de données"
+
+#: src/gawfile.c:123 src/gawimg.c:136
+msgid "All files"
+msgstr "Tous Fichiers"
+
+#: src/gawfile.c:143
+msgid "Data Formats"
+msgstr "Formats de données"
+
+#: src/gawfile.c:184
+#, fuzzy
+msgid "_Open"
+msgstr "_Ouvrir..."
+
+#: src/gawfile.c:188 src/gawimg.c:264
+#, fuzzy
+msgid "_Save"
+msgstr "Sauv conf"
+
+#: src/gawfile.c:191 src/gawimg.c:260
+msgid "Select file"
+msgstr "Fichier sélectionné"
+
+#: src/gawfile.c:255
+msgid ""
+"\n"
+"\n"
+"No waves displayed"
+msgstr ""
+"\n"
+"\n"
+"Aucune courbe affichée"
+
+#: src/gawfile.c:373 src/gawmain.c:697
+#, c-format
+msgid "file '%s' do not exist."
+msgstr ""
+
+#: src/gawimg.c:120
+msgid "All img formats"
+msgstr "Tous Formats Gtk Image"
+
+#: src/gawimg.c:164
+msgid "Gtk Image Formats"
+msgstr "Formats Gtk Image"
+
+#: src/gawimg.c:190
+msgid "Export timeout"
+msgstr "Délai pour expoprtation"
+
+#: src/gawimg.c:198
+msgid "timeout ms:"
+msgstr "Délais (ms)"
+
+#: src/gawmain.c:265
+msgid "Fatal - "
+msgstr "Fatal(e) - "
+
+#: src/gawmain.c:267
+msgid "Gaw Dialog"
+msgstr "Boite de dialogue Gaw"
+
+#: src/gawmain.c:627
+msgid "Welcome to gaw"
+msgstr "Gaw vous salue ..."
+
+#: src/gawmain.c:768
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS]... [FILE]...\n"
+"\n"
+"                : display analog waveforms from input FILE...\n"
+" [-h]           : print list of options\n"
+" [-d]           : set debug mode\n"
+" [-rf fmt]      : specify spice format for input file\n"
+" [-pf fmt]      : specify a printf format for output file\n"
+" [-p num]       : port number for inside server\n"
+" [-C name]      : configuration dir or file name\n"
+msgstr ""
+"Usage: %s [OPTIONS]... [FICHIER]...\n"
+"\n"
+"                  : Afficher les courbes analogique depuis le fichier "
+"d'entrée FICHIER...\n"
+" [-h]           : Afficher la liste des options\n"
+" [-d]           : Activer le mode debogage\n"
+" [-rf fmt]      : Specifier le format spice pour le fichier d'entrée\n"
+" [-pf fmt]      : Specifier le format spice pour le fichier de sortie\n"
+" [-p num]       : n° de port au sein du serveur\n"
+" [-C name]      : répertoire ou fichier de configuration\n"
+
+#: src/gawmain.c:814
+msgid ""
+"\n"
+"\n"
+"This function requires a panel to be selected\n"
+"Select a panel by left clicking in one DrawingArea\n"
+msgstr ""
+"\n"
+"\n"
+"Cette fonction n'est possible que si un panneau est sélectionné\n"
+"Sélectionner d'abord un panneau en faisant un clic gauche dans l'une des "
+"zones de dessin\n"
+
+#: src/gawmain.c:823
+msgid "Compile with -DMSG_DEBUG, to get debug infos."
+msgstr ""
+"Pour obtenir des informations de débogage, compiler avec l'option -"
+"DMSG_DEBUG."
+
+#: src/gawcolor.c:30 lib/appclass.c:43 lib/appclass.c:75 lib/appclass.c:90
+#: lib/appclass.c:104 lib/appclass.c:123 lib/appclass.c:136
+msgid "passed null ptr"
+msgstr "Un pointeur NULL a été passé en paramètre"
+
+#: src/gawcolor.c:60
+#, c-format
+msgid "Can't find color for '%s'"
+msgstr "Impossible de retrouver la couleur de %s"
+
+#: src/gawcolor.c:291
+msgid "Changing wave color"
+msgstr "Changer la couleur de la courbe"
+
+#: src/gawcolor.c:308
+msgid "Changing grid color"
+msgstr "Changer le couleur de la grille"
+
+#: src/gawcolor.c:359
+msgid "Gaw panel colors settings"
+msgstr "Gaw - Choisir les couleurs de panneau"
+
+#: src/gawcolor.c:372
+msgid "Panel Colors Settings"
+msgstr "Choix des couleurs de panneau"
+
+#: src/gawcolor.c:382
+msgid "Background Color:"
+msgstr "Couleur de fond :"
+
+#: src/gawcolor.c:396
+msgid "Grid Color:"
+msgstr "Couleur de la grille :"
+
+#: src/gawcolor.c:409
+msgid "Highlight Color:"
+msgstr "Couleur de réhausse :"
+
+#: src/gawcolor.c:422
+msgid "Select Range Color:"
+msgstr "Couleur de sélection de zone (zoom X+Y) : "
+
+#: src/gawcolor.c:435
+msgid "Cursor 0 Color:"
+msgstr "Couleur du curseur 0 :"
+
+#: src/gawcolor.c:448
+msgid "Cursor 1 Color:"
+msgstr "Couleur du curseur 1 :"
+
+#: src/gawcolor.c:461
+msgid "Wave button bg Color:"
+msgstr ""
+
+#: src/gawcolor.c:474
+msgid "List box button fg Color:"
+msgstr ""
+
+#: src/gawcolor.c:487
+msgid "List box button bg Color:"
+msgstr ""
+
+#: src/gawtext.c:375
+msgid "Gaw Text Edit"
+msgstr "Editeur de texte Gaw"
+
+#: src/gawtext.c:377
+msgid "Gaw Text New"
+msgstr "Créer un nouveau texte"
+
+#: src/gawtext.c:388
+msgid "Text font and colors"
+msgstr "police et couleurs de texte"
+
+#: src/gawtext.c:413
+msgid "Bg:"
+msgstr "Bg:"
+
+#: src/gawtext.c:431
+msgid "Fg:"
+msgstr "Fg:"
+
+#: src/gawtext.c:449
+msgid "Angle:"
+msgstr "Angle:"
+
+#: src/gawtext.c:480
+msgid "Enter Text"
+msgstr "Entrée de texte"
+
+#: src/gawtext.c:501
+msgid ""
+"Copy current settings to userPrefs\n"
+"Note: Default settings are taken from userPrefs\n"
+"File/save conf to retrieve this settings at next startup"
+msgstr ""
+"Copie des paramètres dans userPrefs\n"
+"Note: les paramètres par défaut sont pris dans userPrefs\n"
+"Fichier/sauver conf pour retouver ces paramètres au prochain lancement de Gaw"
+
+#: src/gawtext.c:513
+msgid ""
+"Draw current text in a panel\n"
+"Move the pointer to a panel and click left"
+msgstr ""
+"Dessine le texte courant dans un panneau\n"
+"Placer le pointer dans un panneau et clicker le bouton gauche"
+
+#: src/gawtext.c:523
+msgid "Close this dialog window\n"
+msgstr "Fermer cette fenêtre\n"
+
+#: src/gawgrip.c:28
+#, c-format
+msgid "Panel size w %d h %d"
+msgstr "Panneau L %d H %d"
+
+#: src/gawdnd.c:121
+#, c-format
+msgid "bad magic number 0x%x"
+msgstr "Mauvais nombre magique 0x%x"
+
+#: src/gawdnd.c:174
+msgid "I was dropped on the root window"
+msgstr "J'ai été lâché sur la fenêtre racine"
+
+#: src/gawdnd.c:176
+msgid "source type string"
+msgstr "Chaine du type source"
+
+#: src/gawwave.c:170
+msgid ""
+"Visible Wave button:\n"
+"\n"
+"Click button 1\n"
+" to select wave\n"
+"\n"
+"Press button 3\n"
+" for options menus\n"
+"\n"
+"Drag button to move,\n"
+" copy or delete wave"
+msgstr ""
+"Bouton d'action sur une courbe visible\n"
+"\n"
+"Faire un clic gauche \n"
+"\tpour sélectionner la courbe\n"
+"\n"
+"Faire un clic droit \tpour afficher le menu d'options\n"
+"Faire glisser ce bouton pour déplacer,\n"
+"copier ou supprimer la courbe"
+
+#: src/gawwave.c:199 src/gawapp.c:293
+#, c-format
+msgid "measure: cursor1 - cursor0"
+msgstr "Mesure : Curseur1 - Curseur0"
+
+#: src/gawwave.c:202
+#, c-format
+msgid "measure: variable(cursor%d)"
+msgstr "Mesure : variable (curseur%d)"
+
+#: src/gawapp.c:65
+msgid "I don't want to remove the last panel!"
+msgstr "Le dernier panneau ne peut pas être retiré."
+
+#: src/gawapp.c:296
+#, c-format
+msgid "measure: cursor%d"
+msgstr "Mesure : curseur%d"
+
+#: src/gawapp.c:572
+msgid ""
+"You are going to display a non Logarithm waveform\n"
+"in a Logarithm scaled panel.\n"
+"If you click OK, the waveform will be displayed,\n"
+"and the scale will be reverted to linear.\n"
+"Click Cancel to abort the operation\n"
+msgstr ""
+"Vous aller afficher une série de valeurs non logarithmiques\n"
+"dans un panneau formaté en échelle logarithmique.\n"
+"Si vous clicquez OK, la série srera affichée,\n"
+"et l'échelle sera convertie en linéaire.\n"
+"Clicquez Cancel pour abandonner l'opération\n"
+
+#: src/gawapp.c:762
+msgid ""
+"\n"
+"\n"
+"No wave selected for Delete"
+msgstr ""
+"\n"
+"\n"
+"Pas de courbe sélectionnée pour suppression"
+
+#: src/gawda.c:427
+#, c-format
+msgid "Panel W %d H %d X %d Y %d"
+msgstr "Panneau L %d H %d X %d Y %d"
+
+#: src/userprefs.c:158
+#, c-format
+msgid "Can't stat '%s'."
+msgstr "Impossible de trouver le format '%s'"
+
+#: src/userprefs.c:226
+#, c-format
+msgid "Variable '%s' ignored. Val '%s' at line %d"
+msgstr "Variable '%s' ignorée. Val '%s' à la ligne %d"
+
+#: src/userprefs.c:309
+#, c-format
+msgid "Can't open file '%s': %s\n"
+msgstr "Impossible d'ouvrir le fichier '%s': %s\n"
+
+#: src/userprefs.c:333
+#, fuzzy, c-format
+msgid ""
+"Bad configuration file at line %d :\n"
+" Variable '%s' not found in preferences table.\n"
+"May-be remove the file '%s' and run %s again"
+msgstr ""
+"Erreur dans le fichier de configuration à la ligne %d :\n"
+" variable '%s' pas trouvée dans la table des préférences.Peut-être supprimer "
+"le fichier '%s' et relancer gaw."
+
+#: src/userprefs.c:453 src/userprefs.c:577 src/userprefs.c:581
+#, c-format
+msgid "Can't open file '%s' - %s"
+msgstr "Impossible d'ouvrir le fichier '%s' : %s"
+
+#: src/userprefs.c:475
+#, c-format
+msgid "created config file '%s'"
+msgstr "Fichier de configuration créé %s"
+
+#: src/userprefs.c:490
+#, c-format
+msgid "rcparse returned %d - Stopping"
+msgstr "code de retour de rcparse %d - Arrêt"
+
+#: lib/ss_wav.c:93 lib/sndstream.c:89
+#, c-format
+msgid "channel_%d"
+msgstr "Canal_%d"
+
+#: lib/ss_wav.c:101
+#, c-format
+msgid "wav@%d"
+msgstr "Courbe@%d"
+
+#: lib/ss_wav.c:129 lib/ss_spice2.c:180
+#, c-format
+msgid "unexpected EOF at dvar %d"
+msgstr "Fin de fichier rencontrée à dvar %d"
+
+#: lib/ss_wav.c:205
+msgid "Wav write error"
+msgstr "Erreur pendant l'écriture de la courbe"
+
+#: lib/fdbuf.c:42
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "Impossible d'ouvrir le fichier '%s'"
+
+#: lib/fdbuf.c:126
+#, c-format
+msgid "Seek error '%s': %s"
+msgstr "Erreur lors du repositionnement dans le fichier '%s' : %s"
+
+#: lib/sockcon.c:119
+#, c-format
+msgid "Can't open socket - err = %s"
+msgstr "Impossible d'ouvrir l'interface de connexion - erreur = %s"
+
+#: lib/sockcon.c:121
+#, fuzzy, c-format
+msgid "Can't bind - err = %s"
+msgstr "Impossible de s'attacher à l'interface de connexion - %s"
+
+#: lib/sockcon.c:161
+#, c-format
+msgid "Can't close socket %d - %s"
+msgstr "Impossible de fermer l'interface de connexion %d - %s"
+
+#: lib/sockcon.c:255
+#, c-format
+msgid "Can't get peer name.- %s"
+msgstr "Impossible d'obtenir le nom de l'homologue. - %s"
+
+#: lib/sockcon.c:316
+#, c-format
+msgid "Can't connect socket - err = %d %s\n"
+msgstr ""
+"Impossible de se connecter à l'interface de connexion - erreur = %d %s\n"
+
+#: lib/sockcon.c:402
+msgid "Linger mode could not be enabled."
+msgstr "Le mode persistant (Linger mode) n'a pas pu être activé."
+
+#: lib/sockcon.c:413
+msgid "Keepalive mode could not be enabled."
+msgstr "Le mode de maintient en vie (Keepalive mode) n'a pas pu être activé."
+
+#: lib/sockcon.c:421
+#, fuzzy
+msgid "TcpNoDelay mode could not be enabled."
+msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
+
+#: lib/sockcon.c:435
+msgid "Priority mode could not be enabled."
+msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
+
+#: lib/sockcon.c:437
+msgid "Priority mode not supported by the OS."
+msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
+
+#: lib/sockcon.c:449
+msgid "SetSndbuf mode could not be enabled."
+msgstr "Le mode SetSndbuf n'a pas pu être activé."
+
+#: lib/wavetable.c:135
+#, c-format
+msgid "Try to remove not existing index %d ntables %d"
+msgstr "Tentative de retirer un index inexistant ; index = %d ; ntables = %d"
+
+#: lib/ss_spice3.c:70 lib/ss_nsout.c:107
+#, c-format
+msgid "%d: syntax error, expected \"keyword:\""
+msgstr "%d : Erreur de syntaxe, \"keyword:\" attendu"
+
+#: lib/ss_spice3.c:89 lib/ss_spice3.c:97
+#, c-format
+msgid "%d: syntax error, expected integer"
+msgstr "%d : Erreur de syntaxe, entier attendu"
+
+#: lib/ss_spice3.c:103
+#, c-format
+msgid "%d: \"Variables:\" before \"No. Variables:\""
+msgstr "%d : \"Variables:\" avant \"No. Variables:\""
+
+#: lib/ss_spice3.c:117
+#, c-format
+msgid "%d: Unexpected EOF in \"Variables:\" at var %d"
+msgstr "%d : Fin de fichier inattendue dans \"Variables:\" à var %d"
+
+#: lib/ss_spice3.c:126
+#, c-format
+msgid "%d: expected number name type"
+msgstr "%d : Erreur de syntaxe, numéro, nom ou types attendus"
+
+#: lib/ss_spice3.c:147
+#, c-format
+msgid ""
+"%s: line %d:\n"
+"EOF without \"Values:\" in header"
+msgstr ""
+"%s : ligne %d:\n"
+"Fin de fichier sans \"Values\" en entête"
+
+#: lib/ss_spice3.c:237 lib/ss_hspice.c:418
+#, c-format
+msgid "unexepected EOF in data at offset 0x%lx"
+msgstr "Fin de fichier inattendue dans les données à l'offset 0x%lx"
+
+#: lib/ss_spice3.c:262
+#, c-format
+msgid ""
+"%s:\n"
+"EOF or error reading data field %d in row %d; file is incomplete."
+msgstr ""
+"%s:\n"
+"Fin de fichier ou erreur de lecture du champ de données %d à la rangée %d ; "
+"le fichier est incomplet."
+
+#: lib/fileformat.c:133
+#, c-format
+msgid ""
+"internal error (in regexp %s):\n"
+"  %s"
+msgstr ""
+"Erreur interne (dans regexp %s):\n"
+"  %s"
+
+#: lib/fileformat.c:261
+#, c-format
+msgid ""
+"%s:\n"
+" is not a  \"%s\" Format."
+msgstr ""
+"%s:\n"
+"n'est pas un format \"%s\"."
+
+#: lib/fileformat.c:273
+#, c-format
+msgid "%s: couldn't read with any format"
+msgstr "%s : impossible de lire quel que soit le format"
+
+#: lib/fileformat.c:289
+#, c-format
+msgid "Can't find format '%s'"
+msgstr "Impossible de trouver le format '%s'"
+
+#: lib/fileformat.c:295
+#, c-format
+msgid "Write function not yet implemented for format '%s'"
+msgstr "Fonction d'écriture pas encore implémentée pour le format '%s'"
+
+#: lib/fileformat.c:301 lib/msglog.c:319
+#, c-format
+msgid "Can't open file '%s': %s"
+msgstr "Impossible d'ouvrir le fichier '%s' : %s"
+
+#: lib/sndparams.c:67
+msgid "Broken configuration for this PCM: no configurations available"
+msgstr "Configuration rompue pour ce PCM : pas de configuration disponible"
+
+#: lib/sndparams.c:73
+msgid "Access type not available"
+msgstr "Type d'accès non disponible"
+
+#: lib/sndparams.c:78
+msgid "Sample format non available"
+msgstr "Format d'échantillonnage non disponible"
+
+#: lib/sndparams.c:83
+msgid "Channels count non available"
+msgstr "Nombre de canaux non disponible"
+
+#: lib/sndparams.c:92
+#, c-format
+msgid "%s : rate is not accurate (requested = %iHz, got = %iHz)"
+msgstr "%s : le taux n'est pas exact (demandé = %i Hz, obtenu = %i Hz)"
+
+#: lib/sndparams.c:129
+msgid "Unable to install hw params:"
+msgstr "Impossible d'installer les paramètres matériels :"
+
+#: lib/sndparams.c:136
+#, c-format
+msgid "Can't use period equal to buffer size (%lu == %lu)"
+msgstr ""
+"Impossible d'utiliser une periode égale à la taille du tampon (%lu == %lu)"
+
+#: lib/sndparams.c:172
+msgid "unable to install sw params:"
+msgstr "Impossible d'installer les paramètres logiciels :"
+
+#: lib/sndparams.c:183 lib/sndparams.c:216
+msgid "not enough memory"
+msgstr "Pas assez de mémoire"
+
+#: lib/sndparams.c:202
+#, c-format
+msgid "audio open error: %s"
+msgstr "Erreur d'ouverture audio : %s"
+
+#: lib/sndparams.c:208
+#, c-format
+msgid "info error: %s"
+msgstr "Erreur sur l'info : %s"
+
+#: lib/sndparams.c:323
+#, c-format
+msgid "Unsupported bit size %d.\n"
+msgstr "Résolution de %d bits par échantillon non supportée \n"
+
+#: lib/sndparams.c:391
+#, c-format
+msgid "Error in snd_pcm_readi - %s"
+msgstr "Erreur dans snd_pcm_readi - %s"
+
+#: lib/sndparams.c:397
+#, c-format
+msgid "Error in pcm_read - frames read %ld requested %ld"
+msgstr "Erreur dans pcm_read - trames lues %ld, demandées.%ld"
+
+#: lib/sndparams.c:469
+#, c-format
+msgid "Mixer %s open error: %s"
+msgstr "Erreur d'ouverture Mixer %s : %s"
+
+#: lib/sndparams.c:473
+#, c-format
+msgid "Mixer attach %s error: %s"
+msgstr "Erreur d'attachement du Mixer %s : %s"
+
+#: lib/sndparams.c:477
+#, c-format
+msgid "Mixer register error: %s"
+msgstr "Erreur de registre Mixer : %s"
+
+#: lib/sndparams.c:482
+#, c-format
+msgid "Mixer %s load error: %s"
+msgstr "Erreur de Chargement du Mixer %s : %s"
+
+#: lib/sndparams.c:530
+#, c-format
+msgid "Unable to find simple control '%s', %i"
+msgstr "Impossible de trouver la commande simple '%s', %i"
+
+#: lib/sndstream.c:81
+msgid "Can't initialize sound card"
+msgstr "Impossible d'initialiser la carte son"
+
+#: lib/sndstream.c:114
+#, c-format
+msgid "EOF or error reading data field %d in row %d; file is incomplete."
+msgstr ""
+"Fin de fichier ou erreur de lecture du champ de données %d à la rangée %d ; "
+"le fichier est incomplet."
+
+#: lib/ss_nsout.c:113 lib/ss_nsout.c:121 lib/ss_nsout.c:129
+#, c-format
+msgid "%d: syntax error, expected number"
+msgstr "%d : erreur de syntaxe, nombre attendu"
+
+#: lib/ss_nsout.c:141
+#, c-format
+msgid "%d: syntax error, expected varname"
+msgstr "%d : erreur de syntaxe, nom de variable attendu"
+
+#: lib/ss_nsout.c:148
+#, c-format
+msgid "%d: syntax error, expected var-index"
+msgstr "%d : erreur de syntaxe, index de variable attendu"
+
+#: lib/ss_nsout.c:161
+#, c-format
+msgid "%d: syntax error, expected variable type"
+msgstr "%d : erreur de syntaxe, type de variable attendu"
+
+#: lib/ss_nsout.c:177
+#, c-format
+msgid "%d: no variable indices found in header"
+msgstr "%d : aucun indice de variable trouvé dans l'entête"
+
+#: lib/ss_nsout.c:180
+#, c-format
+msgid "%d: EOF without data-line in header"
+msgstr "%d : Fin de fichier sans ligne de données dans l'entête"
+
+#: lib/ss_nsout.c:247
+#, c-format
+msgid "%s:%d: expected value"
+msgstr "%s %d : valeur attendue"
+
+#: lib/ss_cazm.c:149
+#, c-format
+msgid "line %d: syntax error in header"
+msgstr "%d : erreur de syntaxe dans l'entête"
+
+#: lib/ss_cazm.c:210
+#, c-format
+msgid ""
+"%s:\n"
+"line %d: expected number; maybe this isn't an ascii data file at all?"
+msgstr ""
+"%s : \n"
+"ligne %d : nombre attendu ; peut-être ne s'agit-il pas d'un fichier de "
+"données au format ASCII ?"
+
+#: lib/ss_cazm.c:221
+#, c-format
+msgid "%s:%d: data field %d missing"
+msgstr "%s : %d : champ de données %d manquant"
+
+#: lib/appmem.c:90
+msgid "malloc failed"
+msgstr "malloc() a échoué"
+
+#: lib/appmem.c:114
+msgid "malloc0 failed"
+msgstr "malloc() a échoué"
+
+#: lib/appmem.c:138
+msgid "realloc failed"
+msgstr "realloc() a échoué"
+
+#: lib/spicestream.c:199
+#, fuzzy, c-format
+msgid ""
+"independent variable is not nondecreasing at row %d; ival=%g last_ival=%g - "
+"line %d"
+msgstr ""
+"La variable indépendante n'est pas décroissante à la rangée %d ; ival = %g "
+"last_ival=%g"
+
+#: lib/ss_hspice.c:135
+msgid "internal error - failed to find end of header"
+msgstr "Erreur interne - -la recherche de fin de fichier a échoué"
+
+#: lib/ss_hspice.c:174
+#, c-format
+msgid "unexepected values in block header at offset 0x%lx"
+msgstr "Valeurs inattendues dans le bloc d'entête à l'offset 0x%lx"
+
+#: lib/ss_hspice.c:515
+#, c-format
+msgid ""
+"%s:\n"
+"EOF or error reading data field %d in row %d of table %d; file is incomplete."
+msgstr ""
+"%s:\n"
+"Fin de fichier ou erreur de lecture du champ de données %d à la rangée %d de "
+"la table %d; le fichier est incomplet."
+
+#: lib/ss_hspice.c:544
+msgid "EOF or error reading sweep parameter"
+msgstr "Fin de fichier ou erreur de lecture du paramètre de balayage"
+
+#: lib/stest.c:21
+#, c-format
+msgid "%s  [options] <source file>\n"
+msgstr "%s  [options] <fichier source>\n"
+
+#: lib/stest.c:22
+#, c-format
+msgid "                : test and convert spice formats\n"
+msgstr "                : tester et convertir les formats spice \n"
+
+#: lib/stest.c:23
+#, c-format
+msgid " [-rf fmt]      : specify spice format for input file\n"
+msgstr " [-rf fmt]      : specifier le format spice pour le fichier d'entrée\n"
+
+#: lib/stest.c:24
+#, c-format
+msgid " [-wf fmt]      : specify spice format for outfile file\n"
+msgstr ""
+" [-wf fmt]      : specifier le format spice pour le fichier de sortie\n"
+
+#: lib/stest.c:25
+#, c-format
+msgid " [-o file]      : specify output file\n"
+msgstr " [-o file]      : specifier le fichier de sortie\n"
+
+#: lib/stest.c:26
+#, c-format
+msgid " [-pf fmt]      : specify printf format in output file\n"
+msgstr ""
+" [-pf fmt]      : specifier le format printf dans le fichier de sortie\n"
+
+#: lib/stest.c:27
+#, c-format
+msgid " [-rl]          : list available spice input format\n"
+msgstr " [-rl]          : faire la liste des formats d'entrée spice\n"
+
+#: lib/stest.c:28
+#, c-format
+msgid " [-wl]          : list available spice output format\n"
+msgstr " [-wl]          : faire la liste des formats de sortie spice\n"
+
+#: lib/stest.c:77
+msgid "Spice input formats"
+msgstr "Formats d'entrée spice"
+
+#: lib/stest.c:80
+msgid "Spice output formats"
+msgstr "Formats de sortie spice"
+
+#: lib/wavevar.c:181
+#, c-format
+msgid "assertion failed: lx <= ival for %s: ival=%g li=%d lx=%g"
+msgstr "Echec de l'assertion : lx <= ival pour %s: ival=%g li=%d lx=%g"
+
+#~ msgid ""
+#~ "You are going to reset your rc parameters to factory values\n"
+#~ "You will need to restart Gaw.\n"
+#~ "If this is what you want, click OK\n"
+#~ msgstr ""
+#~ "Vous êtes sur le point de réinitialiser le logiciel avec sa configuration "
+#~ "usine.\n"
+#~ "Vous devrez redémarrer Gaw.\n"
+#~ "Si c'est ce que vous souhaiter faire, cliquer OK.\n"
+
+#~ msgid ""
+#~ "Logarithmic Y axe not available for this panel (null or negative values "
+#~ "in series)"
+#~ msgstr ""
+#~ "Impossible d'afficher l'axe Y en échelle logarithmique dans ce panneau. "
+#~ "Les données contiennent des valeurs négatives ou nulles."
+
+#~ msgid "Sound interface is not compiled in !"
+#~ msgstr "L'interface son n'a pas été intégrée à la compilation !"
+
+#~ msgid "_File"
+#~ msgstr "_Fichier"
+
+#~ msgid "_View"
+#~ msgstr "Afficher"
+
+#~ msgid "_Zoom"
+#~ msgstr "_Zoomer"
+
+#~ msgid "Variable List"
+#~ msgstr "Liste de variables"
+
+#~ msgid "_Cursors"
+#~ msgstr "_Curseurs"
+
+#~ msgid "_Preferences"
+#~ msgstr "Options"
+
+#~ msgid "_Tools"
+#~ msgstr "_Outils"
+
+#~ msgid "_Help"
+#~ msgstr "Aide"
+
+#~ msgid "Open a file"
+#~ msgstr "Ouvrir un fichier"
+
+#~ msgid "_Capture..."
+#~ msgstr "Capturer..."
+
+#~ msgid "Input data from the sound card"
+#~ msgstr "Capturer les données en entrée à partir de la carte son"
+
+#~ msgid "Export waves..."
+#~ msgstr "Exporter courbes..."
+
+#~ msgid "Export displayed waves to a data file"
+#~ msgstr "Exporter les courbes affichées vers un fichier de données"
+
+#~ msgid "Export to image..."
+#~ msgstr "Exporter dans une image"
+
+#~ msgid "Export all panels to an image file"
+#~ msgstr "Créer une image à partir de tous les panneaux affichés"
+
+#~ msgid "_Plot..."
+#~ msgstr "Tracer"
+
+#~ msgid "Output dat in plot format"
+#~ msgstr "Données de sortie au format de dessin point à point"
+
+#~ msgid "Save configuration file"
+#~ msgstr "Enregistrer le fichier de configuration"
+
+#~ msgid "Clear _Default"
+#~ msgstr "Sauv conf + nom de fichier"
+
+#~ msgid "Clear default input file name and Save configuration file"
+#~ msgstr ""
+#~ "Enregistrer le fichier de configuration, en effacant le nom du "
+#~ "fichierdedonnées ouvert par défaut"
+
+#~ msgid "Factory Settings"
+#~ msgstr "Paramètres d'origine"
+
+#~ msgid "Reset configuration file to its default"
+#~ msgstr "Réinitialiser le fichier de configuration à ses valeurs par défaut"
+
+#~ msgid "Execute script..."
+#~ msgstr "Exécuter un script Guile"
+
+#~ msgid "Execute a guile script"
+#~ msgstr "Exécuter un script Guile"
+
+#~ msgid "Open Text tool..."
+#~ msgstr "Ouvrir l'outil texte..."
+
+#~ msgid "Open text tool settings"
+#~ msgstr "Ouvrir l'outil texte"
+
+#~ msgid "Text"
+#~ msgstr "Text"
+
+#~ msgid "_Quit"
+#~ msgstr "Quitter"
+
+#~ msgid "Quit"
+#~ msgstr "Quitter"
+
+#~ msgid "_Add Panel at end"
+#~ msgstr "Ajouter un  panneau"
+
+#~ msgid "Add a new panel"
+#~ msgstr "Ajouter un nouveau panneau"
+
+#~ msgid "_Add Panel"
+#~ msgstr "Ajout panneau"
+
+#~ msgid "Remove Panel"
+#~ msgstr "Sup panneau"
+
+#~ msgid "Remove selected or last panel"
+#~ msgstr ""
+#~ "Retirer le panneau sélectionné ou le dernier panneau si aucun n'est "
+#~ "sélectionné"
+
+#~ msgid "Del Panel"
+#~ msgstr "Sup panneau"
+
+#~ msgid "_Zoom centered C0"
+#~ msgstr "Zoom avant en X centré sur le curseur 0"
+
+#~ msgid "Zoom in centered on cursor 0"
+#~ msgstr "Zoom avant en X centré sur le curseur 0"
+
+#~ msgid "_Z C0"
+#~ msgstr "Z C0"
+
+#~ msgid "_Zoom Cursors"
+#~ msgstr "Zoom Curseurs"
+
+#~ msgid "Display space between 2 cursors"
+#~ msgstr "Zoomer sur l'espace délimité par les deux curseurs"
+
+#~ msgid "_Z Cursors"
+#~ msgstr "_Z Curseurs"
+
+#~ msgid "X unZoom all"
+#~ msgstr "Dézoom X"
+
+#~ msgid "Unzoom X all"
+#~ msgstr "Dézoomer en X complètement (Zoom X = 100%)"
+
+#~ msgid "X unZ"
+#~ msgstr "DéZ X"
+
+#~ msgid "Zoom Y Full"
+#~ msgstr "Dézoomer en Y complètement"
+
+#~ msgid "Unzoom Y  all"
+#~ msgstr "Dézoomer en Y complètement (Zoom Y = 100%)"
+
+#~ msgid "Zoom X..."
+#~ msgstr "Zoom sur X..."
+
+#~ msgid "Select X range with button 1"
+#~ msgstr "Zoomer en X la zone sélectionnée avec le bouton gauche de la souris"
+
+#~ msgid "Zoom Y..."
+#~ msgstr "Zoom sur Y..."
+
+#~ msgid "Select Y range with button 1"
+#~ msgstr "Zoomer en Y la zone sélectionnée avec le bouton gauche de la souris"
+
+#~ msgid "Zoom X+Y..."
+#~ msgstr "Zoomer en X et Y..."
+
+#~ msgid "Select X+Y range with button 1"
+#~ msgstr ""
+#~ "Zoomer en X et en Y la zone sélectionnée avec le bouton gauche de la "
+#~ "souris"
+
+#~ msgid "Zoom Dialog..."
+#~ msgstr "Boite de dialogue Zoom..."
+
+#~ msgid "Zoom Dialog menu"
+#~ msgstr "Boite de dialogue Zoom"
+
+#~ msgid "_Redraw All"
+#~ msgstr "Redessiner tous les panneaux"
+
+#~ msgid "Redraw All panels"
+#~ msgstr "Redessiner tous les panneaux"
+
+#~ msgid "Clear Cursor 0"
+#~ msgstr "Effacer le curseur 0"
+
+#~ msgid "Clear cursor 0 if displayed"
+#~ msgstr "Effacer le curseur 0 s'il est affiché"
+
+#~ msgid "Clear Cursor 1"
+#~ msgstr "Effacer le curseur 1"
+
+#~ msgid "Clear cursor 1 if displayed"
+#~ msgstr "Effacer le curseur 1 s'il est affiché"
+
+#~ msgid "Clear all Cursors"
+#~ msgstr "Afficher tous les curseurs"
+
+#~ msgid "Clear all cursors if displayed"
+#~ msgstr "Effacer les curseurs s'ils sont affichés"
+
+#~ msgid "Set Cursor 0"
+#~ msgstr "Afficher Curseur 0"
+
+#~ msgid "Display cursor 0"
+#~ msgstr "Afficher le curseur 0"
+
+#~ msgid "Set Cursor 1"
+#~ msgstr "Afficher Curseur 1"
+
+#~ msgid "Display cursor 1"
+#~ msgstr "Afficher le curseur 1"
+
+#~ msgid "Set all Cursors"
+#~ msgstr "Afficher tous les curseurs"
+
+#~ msgid "Display all cursors"
+#~ msgstr "Afficher tous les curseurs"
+
+#~ msgid "_About"
+#~ msgstr "A propos"
+
+#~ msgid "About"
+#~ msgstr "A propos"
+
+#~ msgid "UserGuide"
+#~ msgstr "Guide utilisateur de Gaw"
+
+#~ msgid "Gaw User Guide"
+#~ msgstr "Guide utilisateur de Gaw"
+
+#~ msgid "Gaw Web Site"
+#~ msgstr "Site Web de Gaw"
+
+#~ msgid "_Zoom X In"
+#~ msgstr "Zoom X Avant"
+
+#~ msgid "Zoom X In"
+#~ msgstr "Zoom X avant"
+
+#~ msgid "_Z In"
+#~ msgstr "Z +"
+
+#~ msgid "_Zoom X Out"
+#~ msgstr "Zoom X Arrière"
+
+#~ msgid "Zoom X Out"
+#~ msgstr "Zoom X arrière"
+
+#~ msgid "_Z Out"
+#~ msgstr "Z -"
+
+#~ msgid "Delete Wave"
+#~ msgstr "Supprimer cette courbe"
+
+#~ msgid "Delete all selected Waves"
+#~ msgstr "Supprimer toutes les courbes sélectionnées"
+
+#~ msgid "Del Wave"
+#~ msgstr "Sup courbe"
+
+#~ msgid "Delete this Wave"
+#~ msgstr "Supprimer cette courbe"
+
+#~ msgid "Reload All waves"
+#~ msgstr "Recharger toutes les courbes"
+
+#~ msgid "Reread all waveform data files"
+#~ msgstr "Relire tous les fichiers de courbes"
+
+#~ msgid "Reload All"
+#~ msgstr "Recharg tout"
+
+#~ msgid "Change Color..."
+#~ msgstr "Changer la couleur de la courbe"
+
+#~ msgid "Change wave color"
+#~ msgstr "Changer la couleur de la courbe"
+
+#~ msgid "Change panel Colors..."
+#~ msgstr "Changer les couleurs..."
+
+#~ msgid "Change colors used in panel drawing area"
+#~ msgstr "Changer les couleurs utilisées dans la zone graphique du panneau"
+
+#~ msgid "Add this to selected"
+#~ msgstr "Ajouter cette courbe au panneau sélectionné"
+
+#~ msgid "Add this wave to selected panel"
+#~ msgstr "Ajouter cette courbe au panneau sélectionné"
+
+#~ msgid "Add all similar to selected"
+#~ msgstr "Ajouter toutes les courbes similaires au panneau sélectionné"
+
+#~ msgid "Add all similar waves to selected panel"
+#~ msgstr "Ajouter toutes les courbes similaires au panneau sélectionné"
+
+#~ msgid "Delete all similar"
+#~ msgstr "Supprimer des panneaux toutes les courbes similaires"
+
+#~ msgid "Delete all similar waves from panels"
+#~ msgstr "Supprimer des panneaux toutes les courbes similaires"
+
+#~ msgid "show X labels"
+#~ msgstr "Montrer les étiquettes en X"
+
+#~ msgid "show labels in X"
+#~ msgstr "Montrer les étiquettes en X"
+
+#~ msgid "show Y labels"
+#~ msgstr "Montrer les étiquettes en Y"
+
+#~ msgid "show labels in Y"
+#~ msgstr "Montrer les étiquettes en Y"
+
+#~ msgid "show more  Y labels"
+#~ msgstr "Montrer plus d'étiquettes en Y"
+
+#~ msgid "different way to show labels in Y"
+#~ msgstr "Autre façon de montrer les étiquettes en Y"
+
+#~ msgid "Scientific conversion"
+#~ msgstr "Utiliser les notations scientifiques"
+
+#~ msgid "Use Scientific conversion mode"
+#~ msgstr "Utiliser les notations scientifiques"
+
+#~ msgid "log _X scale"
+#~ msgstr "Echelle log en X"
+
+#~ msgid "Log scale in X"
+#~ msgstr "Echelle log en X"
+
+#~ msgid "log _Y selected panel"
+#~ msgstr "Echelle log en Y pour le panneau sélectionné"
+
+#~ msgid "Set Log scale in Y in selected panel"
+#~ msgstr "Echelle log en Y pour le panneau sélectionné"
+
+#~ msgid "Show Grid"
+#~ msgstr "Montrer la grille dans tous les panneaux"
+
+#~ msgid "Show Grid in panels"
+#~ msgstr "Montrer la grille dans tous les panneaux"
+
+#~ msgid "show Y diff measure"
+#~ msgstr "Afficher la différence de mesures en Y"
+
+#~ msgid "show Y diff measure buttons"
+#~ msgstr "Afficher la différence de mesures en Y"
+
+#~ msgid "ToolBar Style Icon+text"
+#~ msgstr "Style de barre des outils Icon+text"
+
+#~ msgid "Toggle toolbar style"
+#~ msgstr "Basculer le style de la barre d'outils"
+
+#, fuzzy
+#~ msgid "Allow Resize the main window"
+#~ msgstr "Fermer cette fenêtre"
+
+#~ msgid "reCreate variable List window"
+#~ msgstr "Recréer la fenêtre de la liste des variables"
+
+#~ msgid "Can't not find action '%s'"
+#~ msgstr "Impossible de trouver l'action '%s'"
+
+#~ msgid "building menus failed: %s"
+#~ msgstr "Echec de la construction du menu : %s"
+
+#~ msgid "_Add Panel Above"
+#~ msgstr "Ajouter un panneau au dessus"
+
+#~ msgid "Add a new panel above this one"
+#~ msgstr "Ajouter un nouveau panneau au-dessus de celui-ci"
+
+#~ msgid "_Add Panel Below"
+#~ msgstr "Ajouter un panneau au dessous"
+
+#~ msgid "Add a new panel below this one"
+#~ msgstr "Ajouter un nouveau panneau en-dessous de celui-ci"
+
+#~ msgid "_Remove this Panel"
+#~ msgstr "Retirer ce panneau"
+
+#~ msgid "Remove this panel"
+#~ msgstr "Retirer ce panneau"
+
+#~ msgid "X unZoom"
+#~ msgstr "Dézoom X"
+
+#~ msgid "Delete Waves"
+#~ msgstr "Supprimer les courbes"
+
+#~ msgid "Delete all Waves in this panel"
+#~ msgstr "Supprimer toutes les courbes de ce panneau"
+
+#~ msgid "Grid Change Color..."
+#~ msgstr "Couleur de la grille..."
+
+#~ msgid "Change the grid color in this panel"
+#~ msgstr "Changer la couleur de la grille dans ce panneau"
+
+#~ msgid "Export to Image..."
+#~ msgstr "Exporter ce panneau vers un fichier image"
+
+#~ msgid "Export this wave to Image file"
+#~ msgstr "Exporter  ce panneau  vers un fichier image"
+
+#~ msgid "Delete all texts"
+#~ msgstr "Supprimer tous les textes"
+
+#~ msgid "Delete all texts in this panel"
+#~ msgstr "Supprimer toutes les textes de ce panneau"
+
+#~ msgid "Edit this text ..."
+#~ msgstr "Editer ce texte..."
+
+#~ msgid "Edit this text"
+#~ msgstr "Editer ce texte"
+
+#~ msgid "Delete this text"
+#~ msgstr "Supprimer ce texte"
+
+#~ msgid "log Y scale"
+#~ msgstr "Echelle log en Y"
+
+#~ msgid "Set Log scale in Y for this panel"
+#~ msgstr "Echelle log en Y pour ce panneau"
+
+#~ msgid "Show Grid in this panel"
+#~ msgstr "Montrer la grille dans ce panneau"
+
+#~ msgid "_Reload this file"
+#~ msgstr "Recharger ce fichier"
+
+#~ msgid "Reload this file"
+#~ msgstr "Recharger ce fichier"
+
+#~ msgid "_Unload this file"
+#~ msgstr "Décharger ce fichier"
+
+#~ msgid "Unload this file"
+#~ msgstr "Décharger ce fichier"
+
+#~ msgid "Export data..."
+#~ msgstr "Exporter des données..."
+
+#~ msgid "Export data from this file"
+#~ msgstr "Exporter les données depuis ce fichier"
+
+#~ msgid "_Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Close this window"
+#~ msgstr "Fermer cette fenêtre"
+
+#~ msgid "gdk_color_alloc failed for %s"
+#~ msgstr "gdk_color_alloc() a échoué pour %s"
+
+#~ msgid "host address information for %s not found"
+#~ msgstr "Impossible de trouver l'adresse de l'hôte pour %s"
+
+#~ msgid "host name information for %s not found"
+#~ msgstr "Impossible de trouver le nom de l'hôte pour %s"
+
+#~ msgid "Can't accept socket - %s"
+#~ msgstr "Ne peut accepter l'interface de connexion - %s"
+
+#~ msgid "Can't listen socket - %s"
+#~ msgstr "Impossible d'écouter l'interface de connexion - %s"
+
+#~ msgid "select error '%s'"
+#~ msgstr "Erreur de sélection '%s'"
+
+#~ msgid "Timeout: Connect socket not ready"
+#~ msgstr "Délai d'attente dépassé : interface de connexion pas prête"
+
+#~ msgid "Unkown service '%s'- port %d"
+#~ msgstr "Service inconnu '%s' - port %d"
+
+#~ msgid "host information from name %s not found"
+#~ msgstr ""
+#~ "Impossible de trouver les informations sur l'hôte à partir du nom '%s'"
+
+#~ msgid "host information for '%s' not found"
+#~ msgstr "Impossible de trouver les informations sur l'hôte pour '%s'"
+
+#~ msgid "Sending: '%s' len %d"
+#~ msgstr "Envoi : '%s' longueur %d"
+
+#~ msgid "Can't send - %s"
+#~ msgstr "Impossible d'envoyer - %s"
+
+#~ msgid "Receive error - %s"
+#~ msgstr "Erreur reçue - %s"
+
+#~ msgid "Fonction called %s"
+#~ msgstr "Fonction appelée %s"

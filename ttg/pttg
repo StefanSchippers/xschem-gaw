@@ -1,0 +1,187 @@
+#!/usr/bin/perl -w
+
+# perl script for talk to Gaw
+#  take an ascii file as argument and load it to gaw
+
+
+use Socket;
+use IO::Socket;
+
+$progname = "pttg";
+$debug = 0;
+$remote_host = "olix";
+$remote_port = "1946";
+$ifile = "";
+$ofile = "";
+
+@prelines = ( "table_new hqdata" );
+@postlines = (
+    "panel 4",
+    "copyvar sample p0",
+    "copyvar in_win p1",
+    "copyvar zero_l p2",
+    "color_bg #ffffff",
+    "export_img hqimg png",
+    "export_data hqdata ascii",
+);
+
+for ( $i = 0; $i <= $#ARGV ; $i++ ) {
+    if ( $ARGV[$i] eq "-d" ) {
+        $debug++;
+    } elsif ( $ARGV[$i] eq "-h" ) {
+        print_help();
+    } elsif ( $ARGV[$i] eq "-p" ) {
+        $i++;
+        $remote_port = $ARGV[$i];
+    } elsif ( $ARGV[$i] eq "-f" ) {
+        $i++;
+        $ifile = $ARGV[$i];
+    } elsif ( $ARGV[$i] eq "-o" ) {
+        $i++;
+        $ofile = $ARGV[$i];
+    } else {
+        $remote_host =  $ARGV[$i];
+    }
+}
+if ( $ofile ne "" ) {
+    unless (open( $ofd, ">$ofile")) {
+	print STDERR "Can't open $ofile: $!\n";
+	return;
+    }
+}
+
+$remote = open_cnx($remote_host, $remote_port);
+sendLines(\@prelines, $remote);
+modify_ascii_file($ifile, $remote);
+sendLines(\@postlines, $remote);
+add_col($ifile,  $remote);
+if ( $ofile ne "" ) {
+    close($ofd);
+}
+sleep(2);
+close $remote;
+
+sub sendLines {
+    my($refList, $remote) = @_;
+
+    foreach $line ( @{$refList}  ) {
+        send_cnx( $remote, "$line\n");
+    }
+}
+
+
+sub add_col {
+    my($filename, $remote) = @_;
+  
+    my($first) = 1;
+#  print "$filename\n";
+    unless (open(INPUT, "<$filename")) {
+	print STDERR "Can't open $filename: $!\n";
+	return;
+    }
+
+    while (<INPUT>) {
+	chomp();
+        @fields = split(" ", $_);
+
+	if ( $first ) {
+	    $first = 0;
+	    send_cnx( $remote, "coladd col10 voltage\n");
+	    send_cnx( $remote, "coldatas col10\n");
+	    $i = $#fields ;
+	    next;
+	}
+	send_cnx( $remote, "$fields[$i]\n");
+    }
+    send_cnx ( $remote, "enddata\n");
+    send_cnx ( $remote, "copyvar col10 p3\n");
+    close(INPUT);
+}
+
+sub modify_ascii_file {
+    my($filename, $remote) = @_;
+  
+    my($first) = 1;
+#  print "$filename\n";
+    unless (open(INPUT, "<$filename")) {
+	print STDERR "Can't open $filename: $!\n";
+	return;
+    }
+
+    while (<INPUT>) {
+	if ( $first ) {
+	    $first = 0;
+	    send_cnx( $remote, "variables ");
+	    send_cnx( $remote, $_ ) ;
+	    send_cnx( $remote, "rowdatas\n");
+	    next;
+	}
+	send_cnx( $remote, "$_");
+    }
+    send_cnx ( $remote, "enddata\n");
+    close(INPUT);
+}
+
+sub send_cnx {
+    my($remote, $line) = @_;
+
+    my($bytes);
+    # check if socket is closed
+    if (!defined($remote)) {
+	die "closed\n";
+    }    
+    if ( $ofile ne "" ) {
+	print $ofd "$line";
+    }
+    print $remote "$line" ;
+
+    $n = recv ($remote, $bytes, 1000, MSG_DONTWAIT );
+    if ( defined($n) ) {
+	$bytes =~ s/\n//g;
+	if ( $bytes ne "" ){
+	    print STDERR "$bytes\n";
+	}
+    }
+}
+
+sub getReply {
+    my($remote) = @_;
+
+    my $byte;
+    print STDOUT "sysread ";
+    if (sysread($remote, $byte, 1) == 1) {
+	print STDOUT "Read $byte";
+    }
+}
+
+# open connection to host 
+sub open_cnx {
+    my($host, $port) = @_;
+    
+    if ( ! defined($host)){
+        die ( "host not defined\n");
+    }
+#    print "$host $port\n";
+    my($remote);
+    $remote = IO::Socket::INET->new( Proto     => "tcp",
+        PeerAddr  => $host,
+        PeerPort  => $port );
+#        Blocking  => 1 );       # no  blocking
+    unless ($remote) {
+        die "$progname: cannot connect to daemon on $host";
+    }
+    $remote->autoflush(1);
+#    binmode($remote);
+
+    return $remote;
+}
+
+sub print_help {
+  print STDERR ("pttg [options] <host>    : connect to host and send a data file.\n");
+  print STDERR ("  -f <datafile>          : send the data of this ascii file.\n");
+  print STDERR ("  -o <file>              : save a copy in file of what is sent to host.\n");
+  print STDERR ("  -p <port>              : change port number instead of default 1946.\n");
+  print STDERR ("  -h                     : this message.\n");
+  print STDERR ("  -d                     : debug, force local host.\n");
+  exit(0);
+}

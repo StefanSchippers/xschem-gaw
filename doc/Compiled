@@ -1,0 +1,30 @@
+
+Compiled  gaw 20100823:
+========
+Fedora 13
+Linux olix 2.6.33.6-147.fc13.x86_64 #1 SMP Tue Jul 6 22:32:17 UTC 2010 x86_64 x86_64 x86_64 GNU/Linux
+
+   GLIB library version:             2.24.1
+   GTK+ library version:             2.20.1
+   Alsa version:                     1.0.23
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale
+
+Fedora 11
+Linux rvix 2.6.29.6-217.2.8.fc11.i586 #1 SMP Sat Aug 15 00:44:39 EDT 2009 i686 athlon i386 GNU/Linux
+
+   GLIB library version:             2.20.5
+   GTK+ library version:             2.16.6
+   Alsa version:                     1.0.21
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale
+
+
+Frugalware (ppc) :
+Linux imac 2.6.32-fw3 #1 PREEMPT Fri May 7 10:52:40 CEST 2010 ppc GNU/Linux
+
+   GLIB library version:             2.22.4
+   GTK+ library version:             2.18.7
+   Alsa version:                     1.0.22
+   data directory:                   /usr/local/share/gaw
+   locale directory:                 /usr/local/share/locale

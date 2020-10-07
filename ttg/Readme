@@ -1,0 +1,10 @@
+
+First run gaw:
+gaw -p 2946
+
+#with perl
+#pttg -f Ascii -o myfile <host>
+pttg -f Ascii -o myfile localhost:2946
+
+#ttg -p 2946 -f myfile  <host>
+ttg -p 2946 -f myfile  localhost

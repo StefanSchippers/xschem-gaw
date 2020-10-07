@@ -1,0 +1,14 @@
+# Template file for 'gaw3'
+pkgname=gaw3
+version=20200922
+revision=2
+build_style=gnu-configure
+# configure_args=""
+makedepends="gtk+3-devel alsa-lib-devel"
+hostmakedepends="pkg-config"
+short_desc="Gtk analog waveform viewer - tool for viewing analog data"
+maintainer="Juan RP <xtraeme@voidlinux.eu>"
+license="GPL-2"
+homepage="http://www.rvq.fr/linux/gaw.php"
+distfiles="http://download.tuxfamily.org/gaw/download/gaw3-${version}.tar.gz"
+checksum="d27e82a2a62e5e40dcff0da51b7cf3105232ee7b9a9e852b99310e4f7a469b01"

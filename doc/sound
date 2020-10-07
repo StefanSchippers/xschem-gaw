@@ -1,0 +1,8 @@
+
+Sound capture is a direct replacement for:
+arecord -d 10  -t wav foobar.wav
++ gaw load file foobar.wav 
+from the sound card.
+
+Samples come directly in a datafile and can be viewed as a loaded file. You
+have just to connect your real time signals to the sound card input.
