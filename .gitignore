@@ -50,3 +50,19 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# gaw stuff
+Makefile
+config.h
+config.log
+config.status
+lib/.deps/
+lib/Makefile
+po/Makefile
+po/Makefile.in
+po/POTFILES
+src/.deps/
+src/Makefile
+src/gaw
+stamp-h1
+
