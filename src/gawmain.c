@@ -635,7 +635,7 @@ void aw_create_main_window ( UserData *ud )
       geometry.min_height = ud->up->min_win_height;
       gtk_window_set_geometry_hints (GTK_WINDOW(window), NULL,
                                      &geometry,  GDK_HINT_MIN_SIZE );
-      gtk_window_move (GTK_WINDOW(window), 160, -1);
+      gtk_window_move (GTK_WINDOW(window), 160, 50);
 
       /* compute the lower point on screen */
       GdkScreen *screen = gdk_screen_get_default ();
