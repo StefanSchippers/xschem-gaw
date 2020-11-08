@@ -17,6 +17,7 @@
 #include <dbuf.h>
 
 #define CON_RECVBUF_SIZE          8192
+#define CON_OPT_REUSEADDR  /* stefan */
 
 enum _ConNewFlagsInfo {
    CON_BIND     = (1 << 0),

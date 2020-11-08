@@ -646,7 +646,7 @@ void aio_create_channel(UserData *ud)
    ud->gawio = (void *) gawio;
 
    SockCon *cnx = con_new( NULL, PF_INET, SOCK_STREAM, IPPROTO_IP,
-                           ud->listenPort, CON_BIND );
+                           ud->listenPort, CON_BIND | CON_REUSEAD ); /* stefan added CON_REUSEAD */
    if ( cnx->status < 0) {
       msg_errorl( 2, "Can't open socket" );
       con_destroy(cnx);

@@ -41,7 +41,7 @@ static int con_read_from (SockCon *cnx, char *buf, int len, int flags);
 SockCon *con_new( char *host, int domain, int sockType, int proto, int port, int flags)
 {
    SockCon *cnx;
-   
+
    cnx = app_new0( SockCon, 1);
    con_construct( cnx, host, domain, sockType, proto, port, flags);
    app_class_overload_destroy( (AppClass *) cnx, con_destroy );
@@ -290,7 +290,6 @@ SockCon *con_accept(SockCon *pser, int checkFlags)
 SockCon *con_acquire( int domain, int sockType, int proto, int checkflags )
 {
    SockCon *cnx;
-   
    cnx = con_new( NULL, domain, sockType, proto, 0, CON_ACQUIRE);
    cnx->s = dup(0); /* 0 in daemon mode */;
    fdsel_set_fd((FdescSelect *) cnx, cnx->s );
