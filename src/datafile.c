@@ -21,11 +21,14 @@
  *** \brief Allocates memory for a new DataFile object.
  */
 
+/* Global pointer for the filter callbacks */
+static DataFile *gdata;
+
 DataFile *datafile_new( void *ud, char *name )
 {
    DataFile *wdata;
 
-   wdata =  app_new0(DataFile, 1);
+   gdata = wdata =  app_new0(DataFile, 1);
    datafile_construct( wdata, ud, name );
    app_class_overload_destroy( (AppClass *) wdata, datafile_destroy );
    return wdata;
@@ -41,6 +44,7 @@ void datafile_construct( DataFile *wdata, void *ud, char *name )
    wdata->ud = ud;
    wdata->wt = wavetable_new( (AppClass *) wdata, name ) ;
    wdata->ftag = next_tag++;
+   wdata->filter_text = NULL;
    aw_vl_menu_item_add( wdata);
 }
 
@@ -184,25 +188,27 @@ datafile_add_list_button(gpointer d, gpointer p)
    char *labelname;
 
    labelname = wavevar_get_label(var, -1);
-                
-   button = gtk_button_new_with_label (labelname);
-   gtk_widget_set_name(button, "listButton" );
-   label = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (button))->data);
-   ac_color_widget_style_color_set( label, ud->up->lboxfgColor, ud->up->lboxbgColor );
-   gtk_box_pack_start (GTK_BOX (wdata->wlist_box), button, FALSE, FALSE, 0);
-   gtk_widget_show (button);
-   gtk_widget_set_tooltip_text ( GTK_WIDGET(button),
-		      _("WaveVar Variable.\nDrag-and-Drop to a WavePanel.\n"
-			"Or select a Panel and left click this button.\n"
-			"Right click gives some other commands.\n") );
 
-   ad_dnd_setup_source(button, wdata, var, NULL);
+   if (wdata->filter_text==NULL || strstr(labelname, wdata->filter_text)!=NULL) {
+     button = gtk_button_new_with_label (labelname);
+     gtk_widget_set_name(button, "listButton" );
+     label = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (button))->data);
+     ac_color_widget_style_color_set( label, ud->up->lboxfgColor, ud->up->lboxbgColor );
+     gtk_box_pack_start (GTK_BOX (wdata->wlist_box), button, FALSE, FALSE, 0);
+     gtk_widget_show (button);
+     gtk_widget_set_tooltip_text ( GTK_WIDGET(button),
+				   _("WaveVar Variable.\nDrag-and-Drop to a WavePanel.\n"
+				     "Or select a Panel and left click this button.\n"
+				     "Right click gives some other commands.\n") );
 
-   g_signal_connect (button, "clicked",
-                     G_CALLBACK (datafile_list_button_cb), (gpointer) var );
-   g_signal_connect (button, "button-press-event",
-                     G_CALLBACK (datafile_list_button_press_cb ), 
-                     (gpointer) var);
+     ad_dnd_setup_source(button, wdata, var, NULL);
+     
+     g_signal_connect (button, "clicked",
+		       G_CALLBACK (datafile_list_button_cb), (gpointer) var );
+     g_signal_connect (button, "button-press-event",
+		       G_CALLBACK (datafile_list_button_press_cb ), 
+		       (gpointer) var);
+   }
    app_free(labelname);
 }
 
@@ -244,6 +250,14 @@ void datafile_list_win_destroy(DataFile *wdata)
    }
    wdata->wlist_win = NULL;
 }
+
+static void datafile_filter_callback( GtkWidget *widget,
+				      GtkWidget *entry )
+{
+  gdata->filter_text = gtk_entry_get_text (GTK_ENTRY (entry));
+  datafile_recreate_list_win (gdata);
+}
+
 /*
  * Show the variable-list window for a waveform data file.
  * If the window already exists, simply raise it to the top.
@@ -303,6 +317,19 @@ datafile_create_list_win (DataFile *wdata)
    app_free(bufp);
    gtk_box_pack_start (GTK_BOX (box1), label, FALSE, FALSE, 0);
 
+   /* filter textbox */
+   GtkWidget *filter = gtk_entry_new();
+   gtk_entry_set_max_length(GTK_ENTRY (filter), 25);
+   g_signal_connect (filter, "activate",
+		     G_CALLBACK (datafile_filter_callback),
+		     filter);
+   if (wdata->filter_text == NULL) {
+     gtk_entry_set_text (GTK_ENTRY (filter), "filter");
+   }
+
+   gtk_box_pack_start (GTK_BOX (box1), filter, FALSE, FALSE, 0);
+   gtk_widget_show (filter);
+   
    scrolled_window = gtk_scrolled_window_new (NULL, NULL);
    gtk_container_set_border_width (GTK_CONTAINER (scrolled_window), 10);
    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window),
@@ -344,7 +371,7 @@ datafile_similar_var_add (gpointer d, gpointer p)
    WaveVar *curvar = (WaveVar *) d;
    WaveVar *var = (WaveVar *) p;
    
-   if ( app_strcmp(curvar->varName, var->varName) == 0 ) { 
+   if ( app_strcmp(curvar->varName, var->varName) == 0 ) {
       ap_panel_add_var( NULL, curvar, NULL, NULL);
    }
 }

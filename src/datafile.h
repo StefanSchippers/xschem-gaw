@@ -37,6 +37,7 @@ struct _DataFile {
    GSimpleActionGroup *group;  /* the vl menu action group */
    GtkWidget *vlmenu;         /*  vl menu  */
    GtkWidget *lbpopmenu;      /*  list button pop menu  */
+   gchar *filter_text; /* text to filter the signals */
 };
 
 /*
