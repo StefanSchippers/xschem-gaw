@@ -11,7 +11,9 @@
 #include <gaw.h>
 #include <duprintf.h>
 #include <gawpixmaps.h>
- 
+
+#include <regex.h>
+
 #ifdef TRACE_MEM
 #include <tracemem.h>
 #endif
@@ -189,7 +191,8 @@ datafile_add_list_button(gpointer d, gpointer p)
 
    labelname = wavevar_get_label(var, -1);
 
-   if (wdata->filter_text==NULL || strstr(labelname, wdata->filter_text)!=NULL) {
+   int match = regexec(&wdata->regex, labelname, 0, NULL, 0);
+   if (match == 0) {
      button = gtk_button_new_with_label (labelname);
      gtk_widget_set_name(button, "listButton" );
      label = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (button))->data);
@@ -208,6 +211,12 @@ datafile_add_list_button(gpointer d, gpointer p)
      g_signal_connect (button, "button-press-event",
 		       G_CALLBACK (datafile_list_button_press_cb ), 
 		       (gpointer) var);
+   } else if (match == REG_NOMATCH) {
+     /* Do nothing */
+   } else {
+     char error_msg[128];
+     regerror(match, &wdata->regex, error_msg, 128);
+     printf("Regex error %s\n", error_msg);
    }
    app_free(labelname);
 }
@@ -255,6 +264,7 @@ static void datafile_filter_callback( GtkWidget *widget,
 				      GtkWidget *entry )
 {
   gdata->filter_text = gtk_entry_get_text (GTK_ENTRY (entry));
+  /* printf("Filter text: %s\n", gdata->filter_text);*/
   datafile_recreate_list_win (gdata);
 }
 
@@ -324,8 +334,10 @@ datafile_create_list_win (DataFile *wdata)
 		     G_CALLBACK (datafile_filter_callback),
 		     filter);
    if (wdata->filter_text == NULL) {
-     gtk_entry_set_text (GTK_ENTRY (filter), "filter");
-   }
+     /* By default match everything */
+     gtk_entry_set_text (GTK_ENTRY (filter), ".*");
+     regcomp(&wdata->regex, ".*", 0);
+   }     
 
    gtk_box_pack_start (GTK_BOX (box1), filter, FALSE, FALSE, 0);
    gtk_widget_show (filter);
@@ -360,6 +372,13 @@ datafile_create_list_win (DataFile *wdata)
 void
 datafile_recreate_list_win (DataFile *wdata)
 {
+  int status = regcomp(&wdata->regex, wdata->filter_text, 0);
+  if (status) {
+     char error_msg[128];
+     regerror(status, &wdata->regex, error_msg, 128);
+     printf("Regex error %s %s\n", wdata->filter_text, error_msg);
+     return;
+  }
    datafile_list_win_empty(wdata);
    datafile_list_win_fill(wdata);
 }
