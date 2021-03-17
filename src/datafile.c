@@ -23,14 +23,11 @@
  *** \brief Allocates memory for a new DataFile object.
  */
 
-/* Global pointer for the filter callbacks */
-static DataFile *gdata;
-
 DataFile *datafile_new( void *ud, char *name )
 {
    DataFile *wdata;
 
-   gdata = wdata =  app_new0(DataFile, 1);
+   wdata =  app_new0(DataFile, 1);
    datafile_construct( wdata, ud, name );
    app_class_overload_destroy( (AppClass *) wdata, datafile_destroy );
    return wdata;
@@ -46,7 +43,6 @@ void datafile_construct( DataFile *wdata, void *ud, char *name )
    wdata->ud = ud;
    wdata->wt = wavetable_new( (AppClass *) wdata, name ) ;
    wdata->ftag = next_tag++;
-   wdata->filter_text = NULL;
    aw_vl_menu_item_add( wdata);
 }
 
@@ -261,11 +257,20 @@ void datafile_list_win_destroy(DataFile *wdata)
 }
 
 static void datafile_filter_callback( GtkWidget *widget,
-				      GtkWidget *entry )
+				      DataFile *wdata )
 {
-  gdata->filter_text = gtk_entry_get_text (GTK_ENTRY (entry));
-  /* printf("Filter text: %s\n", gdata->filter_text);*/
-  datafile_recreate_list_win (gdata);
+  const gchar *filter_text = gtk_entry_get_text (GTK_ENTRY (wdata->filter));
+  /* Recompile the regex with the new string */
+  int status = regcomp(&wdata->regex, filter_text, 0);
+  /* If it fails, print out an error but don't update the signal list */
+  if (status) {
+    char error_msg[128];
+    regerror(status, &wdata->regex, error_msg, 128);
+    printf("Regex error %s %s\n", filter_text, error_msg);
+    return;
+  }
+  
+  datafile_recreate_list_win (wdata);
 }
 
 /*
@@ -328,19 +333,21 @@ datafile_create_list_win (DataFile *wdata)
    gtk_box_pack_start (GTK_BOX (box1), label, FALSE, FALSE, 0);
 
    /* filter textbox */
-   GtkWidget *filter = gtk_entry_new();
-   gtk_entry_set_max_length(GTK_ENTRY (filter), 25);
-   g_signal_connect (filter, "activate",
+   wdata->filter = gtk_entry_new();
+   gtk_entry_set_max_length(GTK_ENTRY (wdata->filter), 25);
+   g_signal_connect (wdata->filter, "activate",
 		     G_CALLBACK (datafile_filter_callback),
-		     filter);
-   if (wdata->filter_text == NULL) {
-     /* By default match everything */
-     gtk_entry_set_text (GTK_ENTRY (filter), ".*");
-     regcomp(&wdata->regex, ".*", 0);
-   }     
+		     wdata);
+   g_signal_connect (wdata->filter, "destroy",
+   		     G_CALLBACK (gtk_widget_destroyed),
+   		     &(wdata->filter) );
+   
+   /* By default match everything */
+   gtk_entry_set_text (GTK_ENTRY (wdata->filter), ".*");
+   regcomp(&wdata->regex, ".*", 0);
 
-   gtk_box_pack_start (GTK_BOX (box1), filter, FALSE, FALSE, 0);
-   gtk_widget_show (filter);
+   gtk_box_pack_start (GTK_BOX (box1), wdata->filter, FALSE, FALSE, 0);
+   gtk_widget_show (wdata->filter);
    
    scrolled_window = gtk_scrolled_window_new (NULL, NULL);
    gtk_container_set_border_width (GTK_CONTAINER (scrolled_window), 10);
@@ -372,13 +379,6 @@ datafile_create_list_win (DataFile *wdata)
 void
 datafile_recreate_list_win (DataFile *wdata)
 {
-  int status = regcomp(&wdata->regex, wdata->filter_text, 0);
-  if (status) {
-     char error_msg[128];
-     regerror(status, &wdata->regex, error_msg, 128);
-     printf("Regex error %s %s\n", wdata->filter_text, error_msg);
-     return;
-  }
    datafile_list_win_empty(wdata);
    datafile_list_win_fill(wdata);
 }
