@@ -11,7 +11,9 @@
 #include <gaw.h>
 #include <duprintf.h>
 #include <gawpixmaps.h>
- 
+
+#include <regex.h>
+
 #ifdef TRACE_MEM
 #include <tracemem.h>
 #endif
@@ -21,14 +23,11 @@
  *** \brief Allocates memory for a new DataFile object.
  */
 
-/* Global pointer for the filter callbacks */
-static DataFile *gdata;
-
 DataFile *datafile_new( void *ud, char *name )
 {
    DataFile *wdata;
 
-   gdata = wdata =  app_new0(DataFile, 1);
+   wdata =  app_new0(DataFile, 1);
    datafile_construct( wdata, ud, name );
    app_class_overload_destroy( (AppClass *) wdata, datafile_destroy );
    return wdata;
@@ -44,7 +43,6 @@ void datafile_construct( DataFile *wdata, void *ud, char *name )
    wdata->ud = ud;
    wdata->wt = wavetable_new( (AppClass *) wdata, name ) ;
    wdata->ftag = next_tag++;
-   wdata->filter_text = NULL;
    aw_vl_menu_item_add( wdata);
 }
 
@@ -189,7 +187,8 @@ datafile_add_list_button(gpointer d, gpointer p)
 
    labelname = wavevar_get_label(var, -1);
 
-   if (wdata->filter_text==NULL || strstr(labelname, wdata->filter_text)!=NULL) {
+   int match = regexec(&wdata->regex, labelname, 0, NULL, 0);
+   if (match == 0) {
      button = gtk_button_new_with_label (labelname);
      gtk_widget_set_name(button, "listButton" );
      label = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (button))->data);
@@ -208,6 +207,12 @@ datafile_add_list_button(gpointer d, gpointer p)
      g_signal_connect (button, "button-press-event",
 		       G_CALLBACK (datafile_list_button_press_cb ), 
 		       (gpointer) var);
+   } else if (match == REG_NOMATCH) {
+     /* Do nothing */
+   } else {
+     char error_msg[128];
+     regerror(match, &wdata->regex, error_msg, 128);
+     printf("Regex error %s\n", error_msg);
    }
    app_free(labelname);
 }
@@ -252,10 +257,20 @@ void datafile_list_win_destroy(DataFile *wdata)
 }
 
 static void datafile_filter_callback( GtkWidget *widget,
-				      GtkWidget *entry )
+				      DataFile *wdata )
 {
-  gdata->filter_text = gtk_entry_get_text (GTK_ENTRY (entry));
-  datafile_recreate_list_win (gdata);
+  const gchar *filter_text = gtk_entry_get_text (GTK_ENTRY (wdata->filter));
+  /* Recompile the regex with the new string */
+  int status = regcomp(&wdata->regex, filter_text, 0);
+  /* If it fails, print out an error but don't update the signal list */
+  if (status) {
+    char error_msg[128];
+    regerror(status, &wdata->regex, error_msg, 128);
+    printf("Regex error %s %s\n", filter_text, error_msg);
+    return;
+  }
+  
+  datafile_recreate_list_win (wdata);
 }
 
 /*
@@ -318,17 +333,21 @@ datafile_create_list_win (DataFile *wdata)
    gtk_box_pack_start (GTK_BOX (box1), label, FALSE, FALSE, 0);
 
    /* filter textbox */
-   GtkWidget *filter = gtk_entry_new();
-   gtk_entry_set_max_length(GTK_ENTRY (filter), 25);
-   g_signal_connect (filter, "activate",
+   wdata->filter = gtk_entry_new();
+   gtk_entry_set_max_length(GTK_ENTRY (wdata->filter), 25);
+   g_signal_connect (wdata->filter, "activate",
 		     G_CALLBACK (datafile_filter_callback),
-		     filter);
-   if (wdata->filter_text == NULL) {
-     gtk_entry_set_text (GTK_ENTRY (filter), "filter");
-   }
+		     wdata);
+   g_signal_connect (wdata->filter, "destroy",
+   		     G_CALLBACK (gtk_widget_destroyed),
+   		     &(wdata->filter) );
+   
+   /* By default match everything */
+   gtk_entry_set_text (GTK_ENTRY (wdata->filter), ".*");
+   regcomp(&wdata->regex, ".*", 0);
 
-   gtk_box_pack_start (GTK_BOX (box1), filter, FALSE, FALSE, 0);
-   gtk_widget_show (filter);
+   gtk_box_pack_start (GTK_BOX (box1), wdata->filter, FALSE, FALSE, 0);
+   gtk_widget_show (wdata->filter);
    
    scrolled_window = gtk_scrolled_window_new (NULL, NULL);
    gtk_container_set_border_width (GTK_CONTAINER (scrolled_window), 10);
