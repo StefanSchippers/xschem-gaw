@@ -192,6 +192,7 @@ datafile_add_list_button(gpointer d, gpointer p)
      button = gtk_button_new_with_label (labelname);
      gtk_widget_set_name(button, "listButton" );
      label = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (button))->data);
+     gtk_label_set_xalign(GTK_LABEL (label), 0.0);
      ac_color_widget_style_color_set( label, ud->up->lboxfgColor, ud->up->lboxbgColor );
      gtk_box_pack_start (GTK_BOX (wdata->wlist_box), button, FALSE, FALSE, 0);
      gtk_widget_show (button);
