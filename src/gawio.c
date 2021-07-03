@@ -159,14 +159,19 @@ datafile_similar_var_add_w_color (gpointer d, gpointer p)
 
 static int aio_copyvar( GawIoData *gawio, char *pline )
 {
+   char *panel; /* stefan */
+   int panelno=-1;
+   WavePanel *wp;
+
    msg_dbg("Fonction called %s", pline );
    UserData *ud = gawio->ud;
    
    char *varName = stu_token_next( &pline, " ", " " );
 
-   /* stefan */
-   /* char *panel = */ stu_token_next( &pline, " ", " " );
-   /* int panelno = atoi(panel + 1); */  /* stefan */
+   panel = stu_token_next( &pline, " ", " " );
+   if(panel[0] == 'p') { /* stefan */
+      panelno = atoi(panel + 1);
+   }
    color = stu_token_next( &pline, " ", " " ); /* stefan */
    /* stefan */
    if( color ) {
@@ -183,7 +188,7 @@ static int aio_copyvar( GawIoData *gawio, char *pline )
    /* /stefan */
 
    WaveVar *var = ( WaveVar *) dataset_get_var_for_name(gawio->wds, varName );
-   /* WavePanel *wp =  (WavePanel *) g_list_nth_data (ud->panelList, panelno); */ /* stefan */
+   if(panelno != -1) wp =  (WavePanel *) g_list_nth_data (ud->panelList, panelno); /* stefan */
    
    if ( ! var ) {
       gawio->msg = g_strdup_printf( _("Variable %s not defined"), varName );
@@ -192,7 +197,8 @@ static int aio_copyvar( GawIoData *gawio, char *pline )
      /* stefan replace single ap_panel_add_var() with loop that loads all 'similar' variables */
      /* ap_panel_add_var(wp, var, NULL, color ? &usercolor : NULL); */  /* stefan */
      DataFile *wdata = (DataFile *) wavetable_get_datafile((WaveTable *) var->wvtable); /* stefan add all similar vars */
-     if( ud->selected_panel == NULL) 
+     if(panelno != -1) ud->selected_panel = g_list_nth_data (ud->panelList, panelno);
+     else if( ud->selected_panel == NULL) 
        ud->selected_panel = g_list_nth_data (ud->panelList, 0); /* stefan force select 1st panel if no selected one*/
      wavetable_foreach_wavevar(wdata->wt, datafile_similar_var_add_w_color, (gpointer) var); /* stefan */
    }

@@ -65,4 +65,9 @@ src/.deps/
 src/Makefile
 src/gaw
 stamp-h1
+Makefile.in
+aclocal.m4
+lib/Makefile.in
+src/Makefile.in
+
 
