@@ -4,8 +4,7 @@
 
 To install gaw perform these commands:
 
-```
-bash
+```bash
 aclocal && automake --add-missing && autoconf
 ./configure
 make
