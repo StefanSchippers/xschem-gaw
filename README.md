@@ -10,6 +10,10 @@ aclocal && automake --add-missing && autoconf
 make
 sudo make install
 ```
+## Regenerate gettext pot file po/gaw3.po:
+```
+xgettext -k_ --from-code=UTF-8 src/*.c lib/*.c -o po/gaw3.pot
+```
 
 ## More Information
 
