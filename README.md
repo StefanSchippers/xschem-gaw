@@ -26,7 +26,7 @@ edit the file po/Makefile.in.in and locate the following line:
 ```
 GETTEXT_MACRO_VERSION = 0.20
 ```
-change the number to 0.19 or 0.19 or whatever the version number of gettext installed on your system. Taking above error as an example you should
+change the number to 0.19 or 0.18 or whatever the version number of gettext installed on your system. Taking above error as an example you should
 replace 0.20 with 0.19.
 After this change rebuild the configure, run configure and make:
 ```
