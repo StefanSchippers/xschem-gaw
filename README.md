@@ -40,11 +40,6 @@ make
 sudo make install
 ```
 
-## Regenerate gettext pot file po/gaw3.po:
-```
-xgettext -k_ --from-code=UTF-8 src/*.c lib/*.c -o po/gaw3.pot
-```
-
 ## More Information
 
 gaw3-20200922 fork with patches to improve remote commands sent from xschem to display waveforms.
