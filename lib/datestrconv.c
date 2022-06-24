@@ -39,7 +39,7 @@ convert_datestr(char *datestr, char *fmt, time_t *int_time, char **str_time )
    if ( str_time ){
      *str_time = app_strdup_printf("%lu", (unsigned long) mytime );
    }
-#if HQDEBUG
+#ifdef HQDEBUG
    if ( prog_debug ){
       char buf[255];
       strftime(buf, sizeof(buf), format, &tm);
@@ -70,7 +70,7 @@ void convert_time_t_to_date( time_t mytime, char *fmt,  char *buf, int buflen )
    ptm = localtime(&mytime);
    strftime(buf, buflen, format, ptm);
 
-#if HQDEBUG
+#ifdef HQDEBUG
    if ( prog_debug ){
       fprintf(stderr, "%lu -> 0x%lX -> \"%s\"\n",
               (unsigned long) mytime, (unsigned long) mytime, buf );

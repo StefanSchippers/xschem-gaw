@@ -854,7 +854,9 @@ main (int argc, char *argv[])
    app_free(rcfile);
 
    ud->reqpanels = up->npanels; 
-   ud->listenPort = up->listenPort;
+   if (  up->listenPort ){
+      ud->listenPort = up->listenPort;
+   }
    /* only if data files not given on command line */
    if ( ud->listFiles == NULL && up->lastDataFile && *up->lastDataFile ){
       if (file_exists (up->lastDataFile)) {

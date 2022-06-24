@@ -125,14 +125,17 @@ int datafile_load(DataFile *wdata)
 int datafile_reload(DataFile *wdata)
 {
    int ret;
-
    UserData *ud = wdata->ud; /* stefan */
-   GawIoData *gawio = (GawIoData *)ud->gawio; /* stefan */
+
    wdata->old_wt = wdata->wt;   /* need this for clean up */
    wdata->wt = wavetable_new( (void *) wdata, wavetable_get_tblname( wdata->wt) ) ;
-   gawio->wds = wavetable_get_cur_dataset(wdata->wt); /* stefan */
    if ( ( ret = datafile_load(wdata)) < 0 ){
+
       return ret;
+   }
+   if ( ud->gawio ){  /* stefan */
+      GawIoData *gawio = (GawIoData *) ud->gawio; /* stefan */
+      gawio->wds = wavetable_get_cur_dataset(wdata->wt); /* stefan */
    }
    return 0;
 }

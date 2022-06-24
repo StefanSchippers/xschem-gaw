@@ -65,6 +65,9 @@ void ap_panel_remove_line( UserData *ud, WavePanel *wp)
       msg_warning(_("I don't want to remove the last panel!"));
       return;
    }
+   if ( ud->selected_panel == wp ){
+      ud->selected_panel = NULL;
+   }
 //   ap_set_user_panel_size(ud);
    ud->panelList = g_list_remove ( ud->panelList, wp );
    pa_panel_destroy(wp);
