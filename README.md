@@ -21,6 +21,16 @@ sudo make install
 
 ## Fix gettext issues
 
+If you get this kind of message
+```
+./configure: line 5347: syntax error near unexpected token `external'
+./configure: line 5347: `AM_GNU_GETTEXT(external)'
+```
+This might be the issue, as found by user Anthony Wall:
+
+*My gettext was from libglib2.0-dev, so the installed library referenced AM_GLIB_GNU_GETTEXT_* instead of AM_GNU_GETTEXT_*.
+I ran sudo apt install gettext (different to previously ran sudo apt install libglib2.0-dev), re-cloned and the install ran correctly.*
+
 If you get this kind of error:
 ```
 *** error: gettext infrastructure mismatch: using a Makefile.in.in from gettext version 0.20 but the autoconf macros are from gettext version 0.19
