@@ -26,7 +26,7 @@ If you get this kind of message
 ./configure: line 5347: syntax error near unexpected token `external'
 ./configure: line 5347: `AM_GNU_GETTEXT(external)'
 ```
-This might be the issue, as found by user Anthony Wall:
+This might be the issue, as found by user [Anthony Wall](https://github.com/anthonyjwall):
 
 *My gettext was from libglib2.0-dev, so the installed library referenced AM_GLIB_GNU_GETTEXT_* instead of AM_GNU_GETTEXT_*.
 I ran sudo apt install gettext (different to previously ran sudo apt install libglib2.0-dev), re-cloned and the install ran correctly.*
