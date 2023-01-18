@@ -154,7 +154,7 @@ int sf_rdhdr_s3raw( SpiceStream *ss )
       ss->rdValFunc = sf_getval_s3ascii ;
    }
    ss->nrows = npoints;
-   ss->expected_vals = (long) npoints * ss->ncols ;
+   ss->expected_vals = (int64_t) npoints * ss->ncols ;
    msg_dbg("expecting %d rows %d cols %d values", npoints, ss->ncols, ss->expected_vals);
    msg_dbg("Done with header at offset 0x%lx\n", (long) fdbuf_tello(ss->linebuf) );
    dbuf_clear((DBuf *) ss->linebuf);
