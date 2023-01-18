@@ -50,7 +50,7 @@ struct _SpiceStream {
    int need_update;
    /* some more variables for hspice */
    int nsweepparam;
-   int expected_vals;    /* number of float in the data block */
+   long expected_vals;    /* number of float in the data block */
    int read_sweepparam;
    int read_vals;        /* number of float read              */
    int read_tables;
