@@ -13,7 +13,10 @@ sudo make install
 If previous method fails try this:
 
 ```bash
-aclocal && automake --add-missing && autoconf
+aclocal
+autoconf
+autoheader
+automake --add-missing
 ./configure
 make
 sudo make install
