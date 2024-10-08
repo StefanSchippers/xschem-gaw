@@ -1224,7 +1224,7 @@ void gm_create_layout (UserData *ud)
       g_error ("Failed to create menu model 'gaw_menubar': %s\n", error->message);
    }
 
-   menumodel = g_object_ref (gtk_builder_get_object (builder,"menubar" ));
+   menumodel = (GMenuModel *) g_object_ref (gtk_builder_get_object (builder,"menubar" ));
    ud->menuBar = gtk_menu_bar_new_from_model(menumodel);
    gtk_widget_show(ud->menuBar);
    g_assert (ud->menuBar);
@@ -1232,13 +1232,13 @@ void gm_create_layout (UserData *ud)
               /* left,    top,  width,   height    */
                    0,      0,      2,        1  );   
 
-   ud->algomodel = g_object_ref (gtk_builder_get_object (builder,"algomenu" ));
+   ud->algomodel = (GMenuModel *) g_object_ref (gtk_builder_get_object (builder,"algomenu" ));
    aw_algo_menu_create( ud );
 
-   ud->xconvmodel = g_object_ref (gtk_builder_get_object (builder,"xconvmenu" ));
+   ud->xconvmodel = (GMenuModel *) g_object_ref (gtk_builder_get_object (builder,"xconvmenu" ));
    aw_xconv_menu_create( ud );
    
-   ud->vlmmodel = g_object_ref (gtk_builder_get_object (builder,"VarList" ));
+   ud->vlmmodel = (GMenuModel *) g_object_ref (gtk_builder_get_object (builder,"VarList" ));
 
    gm_update_menu(ud->menuBar, menubarTip);
    /* sensitive widget */
