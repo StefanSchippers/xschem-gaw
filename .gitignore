@@ -59,15 +59,15 @@ config.status
 lib/.deps/
 lib/Makefile
 po/Makefile
-po/Makefile.in
+# po/Makefile.in
 po/POTFILES
 src/.deps/
 src/Makefile
 src/gaw
 stamp-h1
-Makefile.in
+# Makefile.in
 aclocal.m4
-lib/Makefile.in
-src/Makefile.in
+# lib/Makefile.in
+# src/Makefile.in
 
 
