@@ -105,6 +105,12 @@ int dbuf_get_available( DBuf *dest)
    return dest->len - dest->pos;
 }
 
+void dbuf_rewind( DBuf *dest)
+{
+   dest->pos = 0 ;
+   dest->lineno = 0 ;
+}
+
 void dbuf_set_pos( DBuf *dest, int pos)
 {
    dest->pos = pos ;

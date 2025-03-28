@@ -1,6 +1,6 @@
 # Template file for 'gaw3'
 pkgname=gaw3
-version=20200922
+version=20250128
 revision=2
 build_style=gnu-configure
 # configure_args=""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gaw 20100805\n"
 "Report-Msgid-Bugs-To: www.rvq.fr\n"
-"POT-Creation-Date: 2022-06-24 12:18+0200\n"
+"POT-Creation-Date: 2025-01-28 10:44+0100\n"
 "PO-Revision-Date: 2010-02-02 17:23+0100\n"
 "Last-Translator: Hervé Quillévéré <www.rvq.fr>\n"
 "Language-Team: French\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/datafile.c:203
+#: src/datafile.c:197
 msgid ""
 "WaveVar Variable.\n"
 "Drag-and-Drop to a WavePanel.\n"
@@ -31,7 +31,7 @@ msgstr ""
 "\n"
 "Le clic droit donne accès à d'autres commandes.\n"
 
-#: src/datafile.c:295
+#: src/datafile.c:264
 msgid "wdata is NULL"
 msgstr "wdata vaut NULL"
 
@@ -213,65 +213,65 @@ msgstr "Visualisateur de courbe Gtk Analog Wave"
 msgid "Variable %s already defined"
 msgstr "Variable %s déjà définie"
 
-#: src/gawio.c:114 src/gawio.c:194
+#: src/gawio.c:114 src/gawio.c:171
 #, c-format
 msgid "Variable %s not defined"
 msgstr "Variable %s pas définie"
 
-#: src/gawio.c:129 src/gawio.c:405
+#: src/gawio.c:129 src/gawio.c:375
 #, c-format
 msgid "Expected number at row %d, col %d"
 msgstr "Numbre attendu à la rangée %d, colonne %d"
 
-#: src/gawio.c:273
+#: src/gawio.c:243
 #, c-format
 msgid "Can't export to file %s format %s"
 msgstr "Impossible d'exporter le fichier %s au format %s"
 
-#: src/gawio.c:286
+#: src/gawio.c:256
 #, c-format
 msgid "Bad spec for color %s"
 msgstr "Mauvaise spécification pour la couleur %s"
 
-#: src/gawio.c:345
+#: src/gawio.c:315
 #, c-format
 msgid "Can't load file %s format %s"
 msgstr "Impossible de charger le fichier %s au format %s"
 
-#: src/gawio.c:362
+#: src/gawio.c:332
 msgid "Expecting number"
 msgstr "Nombre attendu"
 
-#: src/gawio.c:428
+#: src/gawio.c:398
 #, c-format
 msgid "%s table not defined"
 msgstr "Table %s non définie"
 
-#: src/gawio.c:575
+#: src/gawio.c:545
 msgid "Current table not defined"
 msgstr "table courante non définie"
 
-#: src/gawio.c:583
+#: src/gawio.c:553
 #, c-format
 msgid "Bad command: '%s'"
 msgstr "Mauvaise commande : '%s'"
 
-#: src/gawio.c:616
+#: src/gawio.c:586
 #, c-format
 msgid "Closing server connection : status %d"
 msgstr "Fermeture de la connexion serveur : état %d"
 
-#: src/gawio.c:623
+#: src/gawio.c:593
 #, c-format
 msgid "Unexpected Condition %d"
 msgstr "Condition inattendue %d"
 
-#: src/gawio.c:636
+#: src/gawio.c:606
 #, c-format
 msgid "Connected: %s %s\n"
 msgstr "Connecté : %s %s\n"
 
-#: src/gawio.c:664
+#: src/gawio.c:634
 #, c-format
 msgid "listen %s"
 msgstr "A l'écoute de %s"
@@ -683,34 +683,34 @@ msgstr "Impossible de fermer l'interface de connexion %d - %s"
 msgid "Can't get peer name.- %s"
 msgstr "Impossible d'obtenir le nom de l'homologue. - %s"
 
-#: lib/sockcon.c:315
+#: lib/sockcon.c:316
 #, c-format
 msgid "Can't connect socket - err = %d %s\n"
 msgstr ""
 "Impossible de se connecter à l'interface de connexion - erreur = %d %s\n"
 
-#: lib/sockcon.c:401
+#: lib/sockcon.c:402
 msgid "Linger mode could not be enabled."
 msgstr "Le mode persistant (Linger mode) n'a pas pu être activé."
 
-#: lib/sockcon.c:412
+#: lib/sockcon.c:413
 msgid "Keepalive mode could not be enabled."
 msgstr "Le mode de maintient en vie (Keepalive mode) n'a pas pu être activé."
 
-#: lib/sockcon.c:420
+#: lib/sockcon.c:421
 #, fuzzy
 msgid "TcpNoDelay mode could not be enabled."
 msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
 
-#: lib/sockcon.c:434
+#: lib/sockcon.c:435
 msgid "Priority mode could not be enabled."
 msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
 
-#: lib/sockcon.c:436
+#: lib/sockcon.c:437
 msgid "Priority mode not supported by the OS."
 msgstr "Le mode priorité (Priority mode) n'a pas pu être activé."
 
-#: lib/sockcon.c:448
+#: lib/sockcon.c:449
 msgid "SetSndbuf mode could not be enabled."
 msgstr "Le mode SetSndbuf n'a pas pu être activé."
 

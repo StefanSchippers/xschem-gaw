@@ -16,7 +16,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <netinet/tcp.h>
+#include <linux/tcp.h>
 
 #include <strmem.h>
 #include <duprintf.h>

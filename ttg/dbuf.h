@@ -54,6 +54,7 @@ void dbuf_set_pos( DBuf *dest, int pos);
 int dbuf_is_empty( DBuf *dest);
 int dbuf_get_lineno( DBuf *dest);
 int dbuf_get_available( DBuf *dest);
+void dbuf_rewind( DBuf *dest);
 int dbuf_get_pos( DBuf *dest);
 int dbuf_get_size( DBuf *dest);
 void dbuf_set_len( DBuf *dest, int len);

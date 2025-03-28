@@ -1,18 +1,18 @@
 dnl **** Process this file with autoconf to produce a configure script.
 dnl *** Remember [] is the quoting mechanism of m4
 
-AC_PREREQ([2.72])
-AC_INIT([gaw3],[1.0],[www.rvq.fr])
+AC_PREREQ(2.61)
+AC_INIT([gaw3], [1.0], [www.rvq.fr])
 AC_CONFIG_SRCDIR([src/gawmain.c])
 AM_INIT_AUTOMAKE
 
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADER([config.h])
 
 AC_PREFIX_DEFAULT("/usr/local")
 
 AC_DEFINE([PACKAGE], [gaw], [Gtk analog waveform viewer - tool for viewing analog data, such as the output of Spice simulations])
 PACKAGE=gaw3
-VERSION=20200922
+VERSION=20250128
 echo Configuring $PACKAGE version $VERSION
 
 AC_DEFINE_UNQUOTED(PACKAGE, "$PACKAGE")
@@ -27,15 +27,7 @@ AC_PROG_RANLIB
 AC_PROG_MKDIR_P
 
 # Checks for header files.
-m4_warn([obsolete],
-[The preprocessor macro 'STDC_HEADERS' is obsolete.
-  Except in unusual embedded environments, you can safely include all
-  C89 headers unconditionally.])dnl
-# Autoupdate added the next two lines to ensure that your configure
-# script's behavior did not change.  They are probably safe to remove.
-AC_CHECK_INCLUDES_DEFAULT
-AC_PROG_EGREP
-
+AC_HEADER_STDC
 AC_CHECK_HEADERS([fcntl.h float.h stdlib.h string.h unistd.h])
 
 AC_SYS_LARGEFILE

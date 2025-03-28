@@ -13,6 +13,7 @@ typedef void (*AppClassFP_Destroy) (void *klass);
 
 /* a generic function callback */
 typedef int (*App_Run_FP)( AppClass *app, void *user_data );
+typedef int (*App_Cb_FP)( AppClass *app, AppClass *user_data );
 
 struct _AppClass {
    int type;                    /* application may use this field to store a type */

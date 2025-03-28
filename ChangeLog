@@ -1,3 +1,19 @@
+SEE ALSO
+https://github.com/StefanSchippers/xschem-gaw
+https://github.com/broccolimicro/waveview 
+
+Tue Jan 28 10:11:44 AM CET 2025
+  - corrected incompatible-pointer-types in gawmenu.c. Some recent libc and
+    compiler does accept this warning.
+    
+Tue Mar 15 10:34:54 CET 2022
+   - corrected crash when pressing the reload all button.
+   - corrected crash when pressing the zoom/zoom-Y-full after deleting panel.
+     Global commands need a selected panel. 
+   
+Sun Oct  4 10:11:25 CEST 2020
+   - validate option -p on command line.
+   
 Tue Sep 22 09:29:01 CEST 2020
    - patch from stephan adding a 'reload_all' ttg comand.
    - update wds used by gawio when issuing the global reload all command from
