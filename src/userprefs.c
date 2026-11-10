@@ -357,7 +357,7 @@ int up_rc_read_file(UserPrefs *up )
 	 if ( app_strcmp(pdesc->extTok,"UserPrefs") == 0 ){
 	    curTable = up->pdesc;
 	 } else {
-	    curTable = (ConfigDescTable *) pdesc->varfunc(up, 1);
+	    curTable = (ConfigDescTable *) ((SubDesc_FP) pdesc->varfunc)(up, 1);
 	 }
       } else if ( up->curel == 0 ){
 	 /* no info after = no call to set var to keep the default */
@@ -418,7 +418,7 @@ void up_rc_desc_write( UserPrefs *up, FILE *ofd, ConfigDescTable *pdesc,
 	 do { /* write the inited struct to file */
 	    up->curnum++;
 	    fprintf( ofd, "\n[%s] {\n", pdesc->extTok);
-	    newDesc = (ConfigDescTable *) pdesc->varfunc(up, 0);
+	    newDesc = (ConfigDescTable *) ((SubDesc_FP) pdesc->varfunc)(up, 0);
 	    up_rc_desc_write( up, ofd, newDesc, up->curnum );
 	    fprintf( ofd, "}\n\n");
 	 } while (0); /* just 1 instance at write time */

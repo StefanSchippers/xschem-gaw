@@ -13,7 +13,7 @@ sudo make install
 If previous method fails try this:
 
 ```bash
-aclocal
+aclocal -I m4
 autoconf
 autoheader
 automake --add-missing
@@ -47,7 +47,7 @@ change the number to 0.19 or 0.18 or whatever the version number of gettext inst
 replace 0.20 with 0.19.
 After this change rebuild the configure, run configure and make:
 ```
-aclocal && automake --add-missing && autoconf
+aclocal -I m4 && automake --add-missing && autoconf
 ./configure
 make
 sudo make install

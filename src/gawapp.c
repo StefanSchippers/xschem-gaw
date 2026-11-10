@@ -719,7 +719,7 @@ ap_wave_if_var_name(TestParams *params)
 
 static int
 ap_remove_all_wave_if_test(UserData *ud, TestParams *params,
-			    gboolean  (*testFunc) () )
+			    gboolean  (*testFunc) (TestParams *) )
 {
    GList *oldlist;
    GList *list;
