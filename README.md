@@ -22,6 +22,24 @@ make
 sudo make install
 ```
 
+## Changing the build system
+
+Automake's maintainer mode is off by default (`AM_MAINTAINER_MODE` in `configure.ac`), so `make` never reruns the autotools and a normal build does not need them installed.
+
+If you edit `configure.ac`, `acinclude.m4`, a file in `m4/` or a `Makefile.am`, `make` will **not** pick up the change on its own. Either rerun the autotools by hand:
+
+```bash
+aclocal -I m4 && autoconf && autoheader && automake --add-missing
+```
+
+or enable maintainer mode, so that `make` regenerates what is needed from then on:
+
+```bash
+./configure --enable-maintainer-mode
+```
+
+Then commit the regenerated `configure`, `config.h.in` and `Makefile.in` files along with your change, since these are what a normal build uses.
+
 ## Fix gettext issues
 
 If you get this kind of message
