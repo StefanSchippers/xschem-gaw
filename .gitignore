@@ -59,7 +59,7 @@ config.status
 lib/.deps/
 lib/Makefile
 po/Makefile
-# po/Makefile.in
+po/Makefile.in
 po/POTFILES
 src/.deps/
 src/Makefile

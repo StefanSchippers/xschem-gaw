@@ -11,8 +11,8 @@
 #include <appclass.h>
 
 typedef struct _WavePanel WavePanel;
-//typedef void (*WaveDraw_FP) (AppClass *vw, WavePanel *wp);
-typedef void (*WaveDraw_FP) ();
+struct _VisibleWave;
+typedef void (*WaveDraw_FP) (struct _VisibleWave *vw, WavePanel *wp);
 
 struct _WavePanel {
    AppClass parent;

@@ -39,8 +39,9 @@
 
 typedef struct _UserPrefs UserPrefs;
 typedef struct _ConfigDescTable ConfigDescTable;
-// typedef void *(*VarAddr_FP)( UserPrefs *up );
-typedef void *(*VarAddr_FP)( ); ; /* do not check arguments */
+typedef void *(*VarAddr_FP)( UserPrefs *up );
+/* signature of varfunc for TINI entries, cast to this type before calling */
+typedef void *(*SubDesc_FP)( UserPrefs *up, int init );
 
 /* Description Table */
 struct _ConfigDescTable {

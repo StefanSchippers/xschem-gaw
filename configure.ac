@@ -5,6 +5,8 @@ AC_PREREQ(2.61)
 AC_INIT([gaw3], [1.0], [www.rvq.fr])
 AC_CONFIG_SRCDIR([src/gawmain.c])
 AM_INIT_AUTOMAKE
+dnl *** Do not rerun autotools from make: generated files are kept in git
+AM_MAINTAINER_MODE
 
 AC_CONFIG_HEADER([config.h])
 
